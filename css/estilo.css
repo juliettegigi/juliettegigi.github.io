@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+
+*{margin:0px;padding:0px;}
+nav{display: flex;
+    justify-content:center;
+    position: sticky;
+}
+
+.divsMenu{
+  margin:0 2em 0 2em;
+  background-color:azure;
+  border: 1px solid rgb(117, 196, 184);
+  padding: 2px 2px 0px 2px ;
+ 
+}
+
+a{  text-decoration: none;
+    font-size: 1.2em;
+ 
+}
+.divsHome{
+
+}
+
+header{
+   display: flex;
+   flex-direction: column;
+  background-image: url("../imgs/header.png"),url("../imgs/header.png");
+    background-size:contain,cover;
+    background-position: top left,bottom right; 
+    background-repeat: no-repeat;
+   
+  
+}
+h1{
+    margin: auto;
+    margin: 0.5em 0px 1em 0px;
+   align-items: center;
+   font-family: 'Sedgwick Ave Display', cursive;
+   text-align: center;
+   font-size: 1.5em;
+}
+
+/* estilos del main */
+.main{
+  margin: auto;
+   display: flex;
+   flex-basis: 10vh;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   padding:2em;
+   width: 80vh;
+}
+
+.divsHome{
+  border: 2px solid black;
+  width: 40%;
+}
