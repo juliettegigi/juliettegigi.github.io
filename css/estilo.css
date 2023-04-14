@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 *{margin:0px;padding:0px;}
 nav{display: flex;
     justify-content:center;
@@ -7,20 +7,34 @@ nav{display: flex;
 }
 
 .divsMenu{
-  margin:0 2em 0 2em;
-  background-color:azure;
-  border: 1px solid rgb(117, 196, 184);
-  padding: 2px 2px 0px 2px ;
- 
+  width: 12em;
+  height: 2.7em;
+  width: 12em;
+  position: relative;
+  top:0px;
+  overflow: hidden;
+
 }
+.divsMenu:hover{
+  height: auto;
+  overflow: visible;
+
+}
+
 
 a{  text-decoration: none;
     font-size: 1.2em;
- 
+    display: block;
+    margin: 4px;font-family: 'Roboto', sans-serif;
 }
-.divsHome{
 
+.menuTexto{
+  display: inline-block;
+  border: 5px ridge rgb(117, 196, 184);
+    padding: 2px 2px 2px 2px ;
+    background-color:azure;
 }
+
 
 header{
    display: flex;
@@ -29,8 +43,14 @@ header{
     background-size:contain,cover;
     background-position: top left,bottom right; 
     background-repeat: no-repeat;
-   
+    height: 7em;
+
   
+}
+.extension{
+  position:absolute;
+  background-color: aqua;
+ 
 }
 h1{
     margin: auto;
@@ -55,4 +75,66 @@ h1{
 .divsHome{
   border: 2px solid black;
   width: 40%;
+}
+
+ul{
+  list-style-type:  none;
+}
+li{margin: 4px;font-family: 'Roboto', sans-serif;}
+
+.contenedor-ul{
+  background-color:azure; 
+ width:max-content;
+ 
+}
+a:hover{
+  background-color:darkgray;
+}
+
+
+.asideLeft{
+  width: 30em;
+  background-color: #9DD4CB;
+  height:500vh;
+  margin: 10px;
+
+ 
+}
+
+.mainps{
+  display: flex;
+}
+em{
+  font-weight: bold;
+}
+p{text-indent: 1em;margin: auto;
+margin-left: 1em;}
+section{
+  margin-top: 2em;
+  padding: 2em;
+  background-color: cornsilk;
+}
+.imgRecetas{
+  height: 16em;
+ 
+}
+
+.recetas{
+  display:flex;
+  align-items: stretch;
+}
+
+.ingredientes{
+  margin-bottom: 1em;
+  font-family: monospace
+}
+
+.receta{
+    
+    margin: auto;
+}
+
+.contenedorReceta{
+  margin-top:4em;
+  align-items: stretch;
 }
