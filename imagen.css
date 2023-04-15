@@ -1,0 +1,71 @@
+#tomate1{
+    
+    fill:#D10F42 ;
+    transform: translate(0px, 0px);
+  
+    
+}
+
+@keyframes a1 { 
+   
+    50% { 
+        transform: translate(10px, 10px);
+    }  
+ 
+ 
+   } 
+
+.tomate2{
+    fill:#D10F42 ;
+    transform: translate(0px, 0px);
+    animation:a2 1s ease-in-out 0s 1 normal  forwards;    
+}
+
+#tomate3{
+    transform: translate(0px, 0px);
+    animation:a2 1s ease-in-out 0s infinite normal  forwards;
+}
+#tomate4{
+    transform: translate(0px, 0px);
+    animation:a2 1s ease-in-out 1s infinite normal  forwards;
+}
+@keyframes a2 { 
+   
+    100% { 
+        transform: translate(30px, 0px);
+    } 
+ 
+   } 
+
+#tomateContainer{
+    transform: rotate(70);
+}
+
+svg{
+    height: 7em;
+}
+
+#cuchillo{
+    fill:#C6C6C5;
+    transform: translate(0px, 0px);
+    animation:a1 1s ease-in-out 0s infinite normal  forwards;
+    
+}
+
+@keyframes a1 { 
+   
+    50% { 
+        transform: translate(10px, 10px);
+    }  
+    100%{
+        transform: translate(10px, 30px);
+    }
+ 
+ 
+   } 
+
+   #mano{
+    fill:#F7E6DC;
+    transform: translate(0px, 0px);
+    animation:a1 1s ease-in-out 0s infinite normal  forwards;
+   }

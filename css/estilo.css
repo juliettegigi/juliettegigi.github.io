@@ -65,12 +65,12 @@ background: #0bf0ab;
 header{
    display: flex;
    flex-direction: column;
-  background-image: url("../imgs/header.png"),url("../imgs/header.png");
-    background-size:contain,cover;
-    background-position: top left,bottom right; 
+  background-image: url("../imgs/cocina1.png");
+    background-size:cover;
+    background-position: bottom right; 
     background-repeat: no-repeat;
     height: 7em;
-
+  
   
 }
 .extension{
@@ -78,6 +78,12 @@ header{
 
  
 }
+.titulo{
+ position:relative;
+ left:0px;
+ bottom:0px;
+}
+
 h1{
     margin: auto;
     margin: 0.5em 0px 1em 0px;
@@ -85,6 +91,9 @@ h1{
    font-family: 'Sedgwick Ave Display', cursive;
    text-align: center;
    font-size: 1.5em;
+
+  
+   
 }
 
 /* estilos del main */
@@ -159,13 +168,18 @@ section{
 }
 
 @media (max-width:700px) { 
+
+  
+
  .subir{
   right: 5em;
  }
   .asideLeft a{
     display: inline;
   }
- header{height:auto;}
+ header{height:auto;
+
+}
   .divsMenu{
    display: flex;
    width:12em;
@@ -249,3 +263,13 @@ body{
  background-color:azure;
 }
 
+#tomate1{
+  width: 15px;
+}
+
+#pica{
+  position: absolute;
+  top:0px;
+  left: 0px;
+
+}
