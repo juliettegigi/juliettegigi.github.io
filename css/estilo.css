@@ -1,25 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 *{margin:0px;padding:0px;}
-nav{display: flex;
-    justify-content:center;
-    position: sticky;
+nav{display: flex;       
+    position: absolute;
+    top: 4.3em; 
+    left: 16em;  
 }
 
 .divsMenu{
-
   height: 2.7em;
   width: 12em;
-  position: relative;
-  top:0px;
+  position:relative;
+ 
   overflow: hidden;
 
 }
 .divsMenu:hover{
   height: auto;
-  overflow: visible;
- 
+  overflow: visible; 
 
+}
+
+.titulo{
+  box-shadow:#5D2F1F -5px 7px 10px 2px; 
+  background: -webkit-linear-gradient(top, #75C4B8,transparent);
+  width: 100%;
 }
 
 
@@ -39,7 +44,7 @@ a,.menuTexto{  text-decoration: none;
     
 }
 .menuTexto:hover{
-  box-shadow: #75C4B8 5px 5px; 
+   box-shadow:#5D2F1F -5px 7px 10px 2px; 
   animation: mianimacion 1s ease-in-out 0s infinite normal none; 
 }
 @keyframes mianimacion { 
@@ -63,36 +68,33 @@ background: #0bf0ab;
 }
 
 header{
+  width: 98vw;
    display: flex;
-   flex-direction: column;
   background-image: url("../imgs/cocina1.png");
     background-size:cover;
     background-position: bottom right; 
     background-repeat: no-repeat;
     height: 7em;
-  
-  
+    position: relative;
+}
+
+.tituloNav{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 .extension{
   position:absolute;
 
  
 }
-.titulo{
- position:relative;
- left:0px;
- bottom:0px;
-}
 
-h1{
-    margin: auto;
+
+.tituloReceta {
     margin: 0.5em 0px 1em 0px;
-   align-items: center;
    font-family: 'Sedgwick Ave Display', cursive;
-   text-align: center;
-   font-size: 1.5em;
-
-  
+   font-size: 1.2em;
    
 }
 
@@ -120,6 +122,7 @@ li{margin: 4px;font-family: 'Roboto', sans-serif;}
 .contenedor-ul{
   background-color:azure; 
  width:max-content;
+
  
 }
 a:hover{
@@ -133,7 +136,8 @@ a:hover{
   background-color: #9DD4CB;
   height:500vh;
   margin: 10px;
-
+  box-shadow:#5D2F1F -5px 7px 30px inset; 
+  padding: 1em;
  
 }
 
@@ -155,47 +159,52 @@ section{
   padding: 2em;
   background-color: cornsilk;
 }
-.imgRecetas{
-   flex:1;
-   margin-right: 1em;
-   width: 35%;
-}
-
+/*---------------------------------- Receta*/
 .recetas{
- 
   display: flex;
-
+  flex-wrap: wrap;
 }
+.imgRecetas{   
+   width:40%;   
+}
+
+.ingredientes{
+  margin-bottom: 1em;
+  font-family: monospace;
+  width: 57%;
+}
+.pasos{
+  flex:1 1 57%;
+}
+.imgRecetasSub{
+  width: 100%;
+}
+ /*----------------------------------fin receta*/
 
 @media (max-width:700px) { 
-
-  
-
- .subir{
-  right: 5em;
- }
-  .asideLeft a{
-    display: inline;
+  .introduccion{
+   
+    box-shadow:#5D2F1F 5px -7px 10px 2px ; 
   }
- header{height:auto;
-
-}
+  header{
+   flex-direction: column;
+  }
+  .titulo{
+    position: absolute;
+    top:0px;
+    right: 0px;
+    width:60vw;
+  }
+  nav{
+  top:0px;
+  left:0px;
+  flex-direction: column;
+  position:relative;
+  }
   .divsMenu{
-   display: flex;
-   width:12em;
-   overflow: hidden;
-   height:auto;
-   position: relative;
-   top:0px;
-   overflow: hidden;
- 
-  }
-
- 
-  .menuTexto{
-    display:inline-block;
-    width: 9em;
-    height:fit-content;
+    display:flex;
+    width: fit-content;
+   height: fit-content;
   }
 .contenedor-ul{
   width: min-content;
@@ -203,10 +212,20 @@ section{
   position: absolute;
   left: 12em;
 }
-  nav{
-    flex-direction: column;
-   
+
+
+
+ .subir{
+  right: 5em;
+ }
+  .asideLeft a{
+    display: inline;
   }
+ header{height:auto; width: 95vw;
+
+} 
+
+
   .recetas { 
      flex-direction: column; 
      align-items: center;     
@@ -214,42 +233,57 @@ section{
   .imgRecetas{
     width: 90%;
   }
-  .receta{
-    flex:1;
-  }
+  
   p{ text-indent: 1px;
      margin:2px;}
-  section{
-   width: 90%;margin: auto;
+
+  .asideLeft,section{
+   width:100%;margin:5vw;
+   padding: 0px;
 
   }   
   .mainps{
     flex-direction: column;
+    width: 95vw;
+    margin: 0px;padding: 0px;
+    align-items: center;
   }
   .asideLeft{width: 100%;height: auto;}
+
+
  } 
+
+
+/*fin media-------------------------------- fin media */
 
 .ingredientes{
   margin-bottom: 1em;
   font-family: monospace;
 }
 
- .receta{
-  flex:2;
-    height: auto;
-    margin: auto;
-} 
+
+.introduccion{
+  box-shadow:#5D2F1F -5px 7px 10px 2px; 
+}
+.introduccion h1{
+  text-align: center;
+  margin-bottom: 1em;
+  
+}
 
 .contenedorReceta{
-
+  display:flex;
+  flex-direction: column;
   margin-top:4em;
- 
+  align-items: center;
+  box-shadow:#5D2F1F 5px -7px 10px 2px ; 
+  padding: 1em;
 }
 
 
 
-body{
-  width: 100vw;
+html{
+  width: 95vw;
 }
 
 .subir{
@@ -261,15 +295,7 @@ body{
  text-align: center;
  border: 5px ridge rgb(117, 196, 184);
  background-color:azure;
+ box-shadow:#5D2F1F -5px 7px 10px 2px ; 
 }
 
-#tomate1{
-  width: 15px;
-}
 
-#pica{
-  position: absolute;
-  top:0px;
-  left: 0px;
-
-}
