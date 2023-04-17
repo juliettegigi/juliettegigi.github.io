@@ -1,51 +1,76 @@
 @import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 *{margin:0px;padding:0px;}
-nav{display: flex;       
-    position: absolute;
-    top: 4.3em; 
-    left: 16em;  
+
+
+
+
+header{
+  width: 98vw;
+   display: flex;
+  background-image: url("../imgs/cocina1.png");
+    background-size:cover;
+    background-position: bottom right; 
+    background-repeat: no-repeat;
+    height: 7em;
+    position: relative;
+    
+}
+
+nav{
+  display:flex;
+ width: 100%;
+ justify-content: center;
+
 }
 
 .divsMenu{
-  height: 2.7em;
-  width: 12em;
-  position:relative;
- 
+  height: 2.4rem; 
+  width: auto;
+  margin-right: 2%;
+  margin-left: 2%;
   overflow: hidden;
 
 }
 .divsMenu:hover{
-  height: auto;
+
   overflow: visible; 
+
 
 }
 
 .titulo{
-  box-shadow:#5D2F1F -5px 7px 10px 2px; 
-  background: -webkit-linear-gradient(top, #75C4B8,transparent);
-  width: 100%;
-}
-
-
-a,.menuTexto{  text-decoration: none;
-    font-size: 1.2em;
-    display: block;
-    margin: 4px;font-family: 'Roboto', sans-serif;
-}
-
-.menuTexto{
- 
-    padding: 2px 2px 2px 2px ;
-    border: 5px ridge rgb(117, 196, 184);
-    background-color:azure;
-    width: auto;
+ width: 100%;
+  text-align: center;
   
-    
+  
+}
+
+a{  text-decoration: none;}
+
+
+.menuTexto{    
+   text-decoration: none;
+   border: 5px ridge rgb(117, 196, 184);
+    background-color:azure;
+    width: max-content;  
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    margin:auto;
+    height: 1.7rem; 
+   
 }
 .menuTexto:hover{
    box-shadow:#5D2F1F -5px 7px 10px 2px; 
   animation: mianimacion 1s ease-in-out 0s infinite normal none; 
+}
+
+.contenedor-ul{
+ padding-top: 0.7rem;
+  background-color:azure; 
+ width:max-content;
+
+ 
 }
 @keyframes mianimacion { 
   20% { 
@@ -67,28 +92,19 @@ background: #0bf0ab;
 } 
 }
 
-header{
-  width: 98vw;
-   display: flex;
-  background-image: url("../imgs/cocina1.png");
-    background-size:cover;
-    background-position: bottom right; 
-    background-repeat: no-repeat;
-    height: 7em;
-    position: relative;
-}
+
 
 .tituloNav{
   display:flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-}
-.extension{
-  position:absolute;
+justify-content: space-between;
+width: 100%;
+box-shadow:#5D2F1F -5px 7px 10px 2px; 
+background: -webkit-linear-gradient(top, #75C4B8,transparent);
 
- 
 }
+
 
 
 .tituloReceta {
@@ -98,67 +114,60 @@ header{
    
 }
 
-/* estilos del main */
-.main{
-  margin: auto;
+/* ---------------------estilos del main */
+main{
    display: flex;
-   flex-basis: 10vh;
-   flex-wrap: wrap;
-   justify-content: space-evenly;
-   padding:2em;
-   width: 80vh;
+   padding: 0.5rem;
+   width:97vw;
+   background-image: url("../imgs/cocina1.png");
+   background-repeat: repeat;
+
 }
 
-.divsHome{
-  border: 2px solid black;
-  width: 40%;
-}
-
-ul{
-  list-style-type:  none;
-}
-li{margin: 4px;font-family: 'Roboto', sans-serif;}
-
-.contenedor-ul{
-  background-color:azure; 
- width:max-content;
-
- 
-}
-a:hover{
-  background-color:darkgray;
-  animation: mianimacion 1s ease-in-out 0s infinite normal none; ;
-}
-
-
-.asideLeft{
-  width: 25vw;
+aside{
+  display: flex;
+  flex-direction: column; 
   background-color: #9DD4CB;
   height:500vh;
   margin: 10px;
   box-shadow:#5D2F1F -5px 7px 30px inset; 
   padding: 1em;
  
+ 
 }
+aside a{
+  width:max-content;
+  font-size: 1.07rem;
+  padding: 0.2rem;
 
-.mainps{
-  display: flex;
-  width: 98vw;
 }
-
-
-
-em{
-  font-weight: bold;
-}
-p{text-indent: 1em;margin: auto;
-margin-left: 1em;}
 section{
-  width: 75vw;
+  background-color: cornsilk;
   margin-top: 2em;
   padding: 2em;
-  background-color: cornsilk;
+
 }
+/*-------------------------------------------fin main*/
+/*---------------------------------------------contenido del section*/
+.introduccion{
+  box-shadow:#5D2F1F -5px 7px 10px 2px; 
+}
+.introduccion h1{
+  text-align: center;
+  margin-bottom: 1em;
+  
+}
+
+.contenedorReceta{
+  display:flex;
+  flex-direction: column;
+  margin-top:4em;
+  align-items: center;
+  box-shadow:#5D2F1F 5px -7px 10px 2px ; 
+  padding: 1em;
+}
+
+
 /*---------------------------------- Receta*/
 .recetas{
   display: flex;
@@ -181,80 +190,35 @@ section{
 }
  /*----------------------------------fin receta*/
 
-@media (max-width:700px) { 
-  .introduccion{
-   
-    box-shadow:#5D2F1F 5px -7px 10px 2px ; 
-  }
-  header{
-   flex-direction: column;
-  }
-  .titulo{
-    position: absolute;
-    top:0px;
-    right: 0px;
-    width:60vw;
-  }
-  nav{
-  top:0px;
-  left:0px;
-  flex-direction: column;
-  position:relative;
-  }
-  .divsMenu{
-    display:flex;
-    width: fit-content;
-   height: fit-content;
-  }
-.contenedor-ul{
-  width: min-content;
-  display:inline-block;
-  position: absolute;
-  left: 12em;
+
+.divsHome{
+  border: 2px solid black;
+  width: 40%;
+}
+
+ul{
+  list-style-type:  none;
+}
+li{margin: 4px;font-family: 'Roboto', sans-serif;}
+
+
+a:hover{
+  background-color:darkgray;
+  animation: mianimacion 1s ease-in-out 0s infinite normal none; 
 }
 
 
 
- .subir{
-  right: 5em;
- }
-  .asideLeft a{
-    display: inline;
-  }
- header{height:auto; width: 95vw;
-
-} 
 
 
-  .recetas { 
-     flex-direction: column; 
-     align-items: center;     
-  } 
-  .imgRecetas{
-    width: 90%;
-  }
-  
-  p{ text-indent: 1px;
-     margin:2px;}
 
-  .asideLeft,section{
-   width:100%;margin:5vw;
-   padding: 0px;
-
-  }   
-  .mainps{
-    flex-direction: column;
-    width: 95vw;
-    margin: 0px;padding: 0px;
-    align-items: center;
-  }
-  .asideLeft{width: 100%;height: auto;}
+em{
+  font-weight: bold;
+}
+p{text-indent: 1em;margin: auto;
+margin-left: 1em;}
 
 
- } 
-
-
-/*fin media-------------------------------- fin media */
 
 .ingredientes{
   margin-bottom: 1em;
@@ -262,28 +226,11 @@ section{
 }
 
 
-.introduccion{
-  box-shadow:#5D2F1F -5px 7px 10px 2px; 
-}
-.introduccion h1{
-  text-align: center;
-  margin-bottom: 1em;
-  
-}
-
-.contenedorReceta{
-  display:flex;
-  flex-direction: column;
-  margin-top:4em;
-  align-items: center;
-  box-shadow:#5D2F1F 5px -7px 10px 2px ; 
-  padding: 1em;
-}
-
 
 
 html{
   width: 95vw;
+  font-size: 100%;
 }
 
 .subir{
@@ -298,4 +245,111 @@ html{
  box-shadow:#5D2F1F -5px 7px 10px 2px ; 
 }
 
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------inicio media*/
+@media (max-width:700px) {
+
+  .divsMenu{
+    display:block;
+    width:12rem;
+    padding:0px;
+    height: 2.7rem;
+    overflow:hidden;
+  }
+  .subDivsMenu{
+   display:flex;
+  width:98vw;
+    align-items:flex-start;
+    justify-content:flex-start;
+   height:auto;
+   margin:0px;
+   padding: 1px;
+  }
+  .menuTexto{
+  margin-top:5px;
+  width: 11.1rem;
+    margin:0px;
+   padding: 1px;
+  }
+  .contenedor-ul{
+   display:inline;
+  width: auto;
+  box-shadow:#5D2F1F 5px -7px 10px 2px;
+ 
+  }
+   html,body{
+    width: 90%;
+   }
+   header{
+    height: auto;
+    flex-direction: column;
+    width:100vw;
+  } 
+  .tituloNav{
+    flex-direction: row-reverse;
+    text-align: start;
+    width: 100%;
+  }
+  #mango,#cuchara{    
+    animation:a8 1s ease-in-out 0s infinite normal  forwards; 
+    transform: translate(0px, 0px);
+    }
+    @keyframes a8 { 
+   
+      100% {   
+       
+        transform: rotate(1deg); 
+        
+      } 
+   
+     } 
+
+  .titulo{
+    position:absolute;
+    top:0px;
+    right:0px;
+    width:60vw;
+    box-shadow:#5D2F1F -5px 7px 10px 2px;
+  }
+  nav{display:flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+main{
+  flex-direction: column;
+}
+aside {
+  display:block;
+  width: 80vw;
+  height: auto;
+}
+aside a{
+  width: auto;
+  padding: 2px;
+  display:inline;
+}
+ .recetas{
+  flex-direction: column;
+  align-items: center;
+ }
+ .imgRecetas{
+  width: 90%;
+ }
+  .introduccion{   
+    box-shadow:#5D2F1F 5px -7px 10px 2px ; 
+  }
+
+
+} 
+
+
+/*fin media-------------------------------- fin media */
 
