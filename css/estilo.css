@@ -265,7 +265,7 @@ nav{
   .divsMenu{
     margin:0px;
     display:block;
-    width:11.4rem;
+    width:11.2rem;
     padding:0px;
     height: 2.7rem;
     overflow:hidden;
@@ -279,7 +279,8 @@ nav{
    margin:0px;
    padding: 1px;
   }
-  .menuTexto{
+  .menuTexto{ 
+  margin-width:0.1rem;
   margin-top:5px;
   width: 11.1rem;
     margin:0px;
