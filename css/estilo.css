@@ -51,7 +51,7 @@ a{  text-decoration: none;}
 
 .menuTexto{    
    text-decoration: none;
-   border: 0.3rem ridge rgb(117, 196, 184);
+   border: 0.1rem ridge rgb(117, 196, 184);
     background-color:azure;
     width: max-content;  
     font-family: 'Roboto', sans-serif;
@@ -279,15 +279,14 @@ nav{
    margin:0px;
    padding: 1px;
   }
-  .menuTexto{ 
-  margin-width:0.1rem;
+  .menuTexto{
   margin-top:5px;
   width: 11.1rem;
     margin:0px;
    padding: 1px;
   }
   .contenedor-ul{
-    margin-left:0.7rem;
+    margin-left:0.8rem;
    display:inline;
   width: auto;
   box-shadow:#5D2F1F 5px -7px 10px 2px;
@@ -361,4 +360,3 @@ aside a{
 
 
 /*fin media-------------------------------- fin media */
-
