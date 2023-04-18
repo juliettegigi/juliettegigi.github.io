@@ -265,7 +265,7 @@ nav{
   .divsMenu{
     margin:0px;
     display:block;
-    width:11.5rem;
+    width:11.4rem;
     padding:0px;
     height: 2.7rem;
     overflow:hidden;
@@ -286,7 +286,7 @@ nav{
    padding: 1px;
   }
   .contenedor-ul{
-    margin-left:0.8rem;
+    margin-left:0.7rem;
    display:inline;
   width: auto;
   box-shadow:#5D2F1F 5px -7px 10px 2px;
