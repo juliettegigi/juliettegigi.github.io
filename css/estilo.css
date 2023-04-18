@@ -51,7 +51,7 @@ a{  text-decoration: none;}
 
 .menuTexto{    
    text-decoration: none;
-   border: 0.4rem ridge rgb(117, 196, 184);
+   border: 0.3rem ridge rgb(117, 196, 184);
     background-color:azure;
     width: max-content;  
     font-family: 'Roboto', sans-serif;
