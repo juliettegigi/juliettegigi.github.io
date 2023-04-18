@@ -51,7 +51,7 @@ a{  text-decoration: none;}
 
 .menuTexto{    
    text-decoration: none;
-   border: 0.1rem ridge rgb(117, 196, 184);
+   border: 0.4rem ridge rgb(117, 196, 184);
     background-color:azure;
     width: max-content;  
     font-family: 'Roboto', sans-serif;
@@ -265,7 +265,7 @@ nav{
   .divsMenu{
     margin:0px;
     display:block;
-    width:11.2rem;
+    width:11.5rem;
     padding:0px;
     height: 2.7rem;
     overflow:hidden;
