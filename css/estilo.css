@@ -256,8 +256,14 @@ html{
 
 /*---------------------------------------------inicio media*/
 @media (max-width:700px) {
+nav{
+  position:relative;
+}
+
+
 
   .divsMenu{
+    margin:0px;
     display:block;
     width:12rem;
     padding:0px;
@@ -280,9 +286,11 @@ html{
    padding: 1px;
   }
   .contenedor-ul{
+    margin-left:5px;
    display:inline;
   width: auto;
   box-shadow:#5D2F1F 5px -7px 10px 2px;
+  
  
   }
    html,body{
