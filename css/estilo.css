@@ -51,7 +51,7 @@ a{  text-decoration: none;}
 
 .menuTexto{    
    text-decoration: none;
-   border: 0.1rem ridge rgb(117, 196, 184);
+   border: 0.38rem ridge rgb(117, 196, 184);
     background-color:azure;
     width: max-content;  
     font-family: 'Roboto', sans-serif;
@@ -255,7 +255,7 @@ html{
 
 
 /*---------------------------------------------inicio media*/
-@media (max-width:700px) {
+@media (max-width:800px) {
 nav{
   position:relative;
 }
@@ -263,9 +263,10 @@ nav{
 
 
   .divsMenu{
+    
     margin:0px;
     display:block;
-    width:11.3rem;
+    width:11.2rem;
     padding:0px;
     height: 2.7rem;
     overflow:hidden;
@@ -280,6 +281,7 @@ nav{
    padding: 1px;
   }
   .menuTexto{
+    border-width:0.1em;
   margin-top:5px;
   width: 11.1rem;
     margin:0px;
