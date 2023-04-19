@@ -288,28 +288,32 @@ display:block;
  }
 
   .divsMenu{
-    
     margin:0px;
-    width:11.8rem;
+    display:block;
+    width:12rem;
     padding:0px;
     height: 2.7rem;
     overflow:hidden;
   }
- 
+  .subDivsMenu{
+   display:flex;
+  width:98vw;
+    align-items:flex-start;
+    justify-content:flex-start;
+   height:auto;
+   margin:0px;
+   padding: 1px;
+  }
   .menuTexto{
-  
-    border-width:0.2rem;
   margin-top:5px;
-  width:11.1rem;
-
+  width: 11.1rem;
     margin:0px;
    padding: 1px;
   }
   .contenedor-ul{
-  
-    margin-left:0.3rem;
-   
-  width: max-content;
+    margin-left:5px;
+   display:inline;
+  width: auto;
   box-shadow:#5D2F1F 5px -7px 10px 2px;
   
  
