@@ -2,10 +2,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 *{margin:0px;padding:0px;}
 
-
-#menuIcon{
-  display:none;
+.menu{
+  margin-top: 1em;
 }
+
+.texto-ul{
+  width: fit-content;
+  background-color:azure;
+  height: 2.46rem; 
+  overflow: hidden;
+}
+.texto-ul:hover{
+ height: auto;
+}
+.subDivsMenu{
+ height: 1.7rem;
+ width: 12rem; 
+}
+.menuTexto{
+  border: 0.38rem ridge rgb(117, 196, 184);
+  background-color:azure;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.2em;
+  vertical-align: top;
+  top:0px;
+  height: 1.7rem; 
+  width: 11rem;
+  
+}
+.menuTexto:hover{
+
+    box-shadow:#5D2F1F -5px 7px 10px 2px; 
+    animation: mianimacion 1s ease-in-out 0s infinite normal none; 
+}
+.carrito{
+  position:absolute;
+  right: 3.2rem;
+  bottom: 0px;
+  box-shadow:#5D2F1F 5px -7px 10px 2px; 
+  height: 2.9rem;
+  width: 3rem;
+  z-index: 1;
+
+}
+.iconocarrito{
+  display:flex;
+  justify-content:center;
+  align-items: center;
+  width: 100%;
+ 
+}
+
+.menuIcon{
+  height: 2rem;
+  width:2rem;
+  margin:0.1rem;
+
+}
+.iconomenu{
+  display:flex;
+  justify-content:end;
+  width: 100%;
+ 
+}
+
 
 header{
   width: 98vw;
@@ -14,66 +74,52 @@ header{
     background-size:cover;
     background-position: bottom right; 
     background-repeat: no-repeat;
-    height: 7em;
+    height: 7rem;
     position: relative;
     
 }
 
-nav,.subnav{
-  display:flex;
- width: 100%;
- justify-content: center;
-
-}
-
-.divsMenu{
-  height: 2.4rem; 
-  width: auto;
-  margin-right: 2%;
-  margin-left: 2%;
+.subnav{
+  z-index: 0;
+  box-shadow:#5D2F1F 5px -7px 10px 2px; 
+  height: 3rem;
+  width: 3rem;
   overflow: hidden;
-
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
 }
-.divsMenu:hover{
-
-  overflow: visible; 
-
-
+nav{
+  display:flex;
+  justify-content: end;
+  width:100%;
+ 
+  
+}
+.subnav:hover{
+  box-shadow:none; 
+  overflow: visible;
+height:fit-content;
+width: 12rem;
+top:4rem;
 }
 
 .titulo{
  width: 100%;
   text-align: center;
+  height: 7rem;
   
-  
 }
 
-a{  text-decoration: none;}
-
-
-.menuTexto{    
-   text-decoration: none;
-   border: 0.38rem ridge rgb(117, 196, 184);
-    background-color:azure;
-    width: max-content;  
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.2em;
-    margin:auto;
-    height: 1.7rem; 
-   
-}
-.menuTexto:hover{
-   box-shadow:#5D2F1F -5px 7px 10px 2px; 
-  animation: mianimacion 1s ease-in-out 0s infinite normal none; 
+a{  text-decoration: none;height: fit-content;}
+a:hover{
+  background-color: grey;
 }
 
-.contenedor-ul{
- padding-top: 0.7rem;
-  background-color:azure; 
- width:max-content;
 
- 
-}
+
+
+
 @keyframes mianimacion { 
   20% { 
   background: #11ccec; 
@@ -110,9 +156,9 @@ background: -webkit-linear-gradient(top, #75C4B8,transparent);
 
 
 .tituloReceta {
-    margin: 0.5em 0px 1em 0px;
+    margin: 0.5rem 0px 1rem 0px;
    font-family: 'Sedgwick Ave Display', cursive;
-   font-size: 1.2em;
+   font-size: 1.2rem;
    
 }
 
@@ -133,7 +179,7 @@ aside{
   height:500vh;
   margin: 10px;
   box-shadow:#5D2F1F -5px 7px 30px inset; 
-  padding: 1em;
+  padding: 1rem;
  
  
 }
@@ -145,8 +191,8 @@ aside a{
 }
 section{
   background-color: cornsilk;
-  margin-top: 2em;
-  padding: 2em;
+  margin-top: 2rem;
+  padding: 2rem;
 
 }
 /*-------------------------------------------fin main*/
@@ -156,17 +202,17 @@ section{
 }
 .introduccion h1{
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
   
 }
 
 .contenedorReceta{
   display:flex;
   flex-direction: column;
-  margin-top:4em;
+  margin-top:4rem;
   align-items: center;
   box-shadow:#5D2F1F 5px -7px 10px 2px ; 
-  padding: 1em;
+  padding: 1rem;
 }
 
 
@@ -180,7 +226,7 @@ section{
 }
 
 .ingredientes{
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
   font-family: monospace;
   width: 57%;
 }
@@ -204,7 +250,7 @@ ul{
 li{margin: 4px;font-family: 'Roboto', sans-serif;}
 
 
-a:hover{
+li a:hover{
   background-color:darkgray;
   animation: mianimacion 1s ease-in-out 0s infinite normal none; 
 }
@@ -217,13 +263,13 @@ a:hover{
 em{
   font-weight: bold;
 }
-p{text-indent: 1em;margin: auto;
-margin-left: 1em;}
+p{text-indent: 1rem;margin: auto;
+margin-left: 1rem;}
 
 
 
 .ingredientes{
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
   font-family: monospace;
 }
 
@@ -237,7 +283,7 @@ html{
 
 .subir{
   position:fixed;
-  right: 1em;
+  right: 1rem;
  bottom: 0px;
  border-radius: 100%;
  padding: 10px;
@@ -259,66 +305,15 @@ html{
 /*---------------------------------------------inicio media*/
 @media (max-width:800px) {
 
-  .subnav{height: 3em;
-  overflow:hidden;
-  display:block;
-
+header{
+  width: 98vw;
+}
+.titulo{
+  font-size: 0.5rem;
 }
 
 
-.subnav:hover{
-  overflow:visible;
-  }
-#menuIcon{
-  height: 2em;
-  width:2em;
-  margin-top:0.5em;
-  margin-bottom: 0.5em;
-display:block; 
-}
 
-.subDivsMenu{
-  display:flex;
-  width:fit-content;
-   justify-content: flex-start;
-   align-items: flex-start;
-  height:min-content;
-  margin:0px;
-  padding: 1px;
- }
-
-  .divsMenu{
-    margin:0px;
-    width:11.8rem;
-    padding:0px;
-    height: 2.7rem;
-    overflow:hidden;
-  }
-  .subDivsMenu{
-    display:flex;
-    width:fit-content;
-     justify-content: flex-start;
-     align-items: flex-start;
-    height:min-content;
-    margin:0px;
-    padding: 1px;
-  }
-  .menuTexto{
-    border-width:0.2rem;
-    margin-top:5px;
-    width:11.1rem;
-  
-      margin:0px;
-     padding: 1px;
-  }
-  .contenedor-ul{
-    
-    margin-left:0.3rem;   
-  width: max-content;
-  box-shadow:#5D2F1F 5px -7px 10px 2px;
-  
- 
-  }
    html,body{
     width: 90%;
    }
@@ -383,6 +378,7 @@ aside a{
 
 
 } 
+
 
 
 /*fin media-------------------------------- fin media */

@@ -593,12 +593,12 @@
                c-1.6-2.5-5.1-19.3-8.7-20.3s-15.8-1.6-18.3-1.6s-3.5,1.5-3.5,1.5s-4.8-9.6-6.8-11.9c-1.9-2.2-6.3-4.3-9-3.3
                c-2.2,0.8-4.8,2.3-3.8,9.5c1,7.2,5.8,24,5.8,24s-2.5-1.3-2.6,5.3c-0.2,6.6-0.3,11.4-3.5,15.2c-3.1,3.8-0.5,15.2-0.5,19.3
                C203.5,489.9,201.7,503.6,203.7,508.5z"/>
-            <path fill="#F3DBCC" d="M223.8,427.8c0,0,3.5,7,4.7,10.2c1.6,4.3,5.3,22.3,6.3,25.1c0.7,1.8-0.4-9.6-1-14.9
+            <path id="mano2" d="M223.8,427.8c0,0,3.5,7,4.7,10.2c1.6,4.3,5.3,22.3,6.3,25.1c0.7,1.8-0.4-9.6-1-14.9
                c-0.5-4.4-3.9-17.5,8.3-20.8c-5.1-0.6-13-1.1-14.9-1.1C224.8,426.3,223.8,427.8,223.8,427.8z"/>
-            <path fill="#F3DBCC" d="M217,510.3c0.5-7.5,2.1-13.5,0.9-21.1c-1.2-7.4-7.7-43.2-7.7-43.2s-2.5-1.3-2.6,5.3
+            <path id="mano3" d="M217,510.3c0.5-7.5,2.1-13.5,0.9-21.1c-1.2-7.4-7.7-43.2-7.7-43.2s-2.5-1.3-2.6,5.3
                c-0.2,6.6-0.3,11.4-3.5,15.2c-3.1,3.8-0.5,15.2-0.5,19.3c0,4.1-1.8,17.8,0.2,22.7c2,4.9,15.7,22.2,18.6,28.5
                C222.4,537.2,216,524.2,217,510.3z"/>
-            <path fill="#F3DBCC" d="M217.8,502.7c0.5-4.4,0.9-8.6,0.1-13.4c-1.2-7.4-7.7-43.2-7.7-43.2s-2.5-1.3-2.6,5.3
+            <path id="mano4" d="M217.8,502.7c0.5-4.4,0.9-8.6,0.1-13.4c-1.2-7.4-7.7-43.2-7.7-43.2s-2.5-1.3-2.6,5.3
                c-0.1,4.3-0.2,7.8-1.2,10.8C212.3,464.7,217.4,494.9,217.8,502.7z"/>
             <path fill="#29A349" d="M247.8,268.5c0,0-9.1,7.7-11.3,7.3c-2.2-0.4-21-3.6-29.1,1.7c-8.8,5.8-10.6,17.2-11.7,22.1
                c-1.1,4.9-2.2,9.2-2.9,9.2s3.1-0.2,8.1,0.6c8.2,1.4,23,1.5,30.5-5.8c5.4-5.3,7.7-15.9,8.3-19.2c0.6-3.3,0.1-6.7,1.2-7.6
@@ -614,56 +614,75 @@
                
            
             <nav>
-                <div class="subnav">
-                    <svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
-                    <div class="divsMenu">
-                         <div class="subDivsMenu">
-                             <div class="menuTexto" id="saladas">
-                                🍝 Recetas Saladas
-                             </div>
-                             <div class="contenedor-ul">
-                                 <ul>
-                                    <li><a href="./bocaditos.html">Bocaditos y entremeses</a></li>
-                                    <li><a href="./fiambres.html">Fiambres</a></li>
-                                    <li><a href="./ensaladas.html">Ensaladas</a></li>
-                                    <li><a href="./huevos.html">Huevos y tortillas</a></li>
-                                    <li><a href="./sopas.html">Sopas</a></li>
-                                </ul>
-                             </div>
-                         </div>
+
+                <div class="iconos">
+                    <div class="carrito">
+                        <div class="iconocarrito">
+                          <a href="formulario.html">  <svg class="menuIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/></svg>
+                          </a>
+                        </div>
+                    </div>
+                    <div class="subnav">
                     
-                    </div>
-                    <div class="divsMenu">
-                        <div class="subDivsMenu">
-                            <div class="menuTexto" id="dulces">
-                                🧁 Recetas dulces
+                    
+                            <div class="iconomenu">
+                                 <svg class="menuIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
                             </div>
-                            <div class="contenedor-ul">
-                                <ul>
-                                   <li><a href="./bocaditos.html">Bocaditos y entremeses</a></li>
-                                   <li><a href="./fiambres.html">Fiambres</a></li>
-                                   <li><a href="./ensaladas.html">Ensaladas</a></li>
-                                   <li><a href="./huevos.html">Huevos y tortillas</a></li>
-                                   <li><a href="./sopas.html">Sopas</a></li>
-                               </ul>
+                    
+                        <div class="menu">
+                            <div class="divsMenu">
+                                 <div class="subDivsMenu">
+                                    <div class="texto-ul">
+                                        <div class="menuTexto" id="saladas">
+                                            🍝 Recetas Saladas
+                                         </div>
+                                         <div class="contenedor-ul1">
+                                            <ul>
+                                               <li><a href="./bocaditos.html">Bocaditos y entremeses</a></li>
+                                               <li><a href="./fiambres.html">Fiambres</a></li>
+                                               <li><a href="./ensaladas.html">Ensaladas</a></li>
+                                               <li><a href="./huevos.html">Huevos y tortillas</a></li>
+                                               <li><a href="./sopas.html">Sopas</a></li>
+                                           </ul>
+                                        </div>
+                                    </div>
+                                    <div class="texto-ul">
+                                        <div class="menuTexto" id="dulces">
+                                            🧁 Recetas dulces
+                                        </div>
+                                         <div class="contenedor-ul1">
+                                            <ul>
+                                               <li><a href="./bocaditos.html">Bocaditos y entremeses</a></li>
+                                               <li><a href="./fiambres.html">Fiambres</a></li>
+                                               <li><a href="./ensaladas.html">Ensaladas</a></li>
+                                               <li><a href="./huevos.html">Huevos y tortillas</a></li>
+                                               <li><a href="./sopas.html">Sopas</a></li>
+                                           </ul>
+                                        </div>
+                                    </div>
+                                    <div class="texto-ul">
+                                        <div class="menuTexto">
+                                            🥦 Bajas Calorías
+                                        </div>
+                                         <div class="contenedor-ul1">
+                                            <ul>
+                                               <li><a href="./bocaditos.html">Bocaditos y entremeses</a></li>
+                                               <li><a href="./fiambres.html">Fiambres</a></li>
+                                               <li><a href="./ensaladas.html">Ensaladas</a></li>
+                                               <li><a href="./huevos.html">Huevos y tortillas</a></li>
+                                               <li><a href="./sopas.html">Sopas</a></li>
+                                           </ul>
+                                        </div>
+                                    </div>
+                    
+                    
+                                 </div>
+                    
                             </div>
+                    
+                    
                         </div>
-                    </div>
-                    <div class="divsMenu">
-                        <div class="subDivsMenu" id="bajas">
-                            <div class="menuTexto">
-                                🥦 Bajas Calorías
-                            </div>
-                            <div class="contenedor-ul">
-                                <ul>
-                                   <li><a href="./bocaditos.html">Bocaditos y entremeses</a></li>
-                                   <li><a href="./fiambres.html">Fiambres</a></li>
-                                   <li><a href="./ensaladas.html">Ensaladas</a></li>
-                                   <li><a href="./huevos.html">Huevos y tortillas</a></li>
-                                   <li><a href="./sopas.html">Sopas</a></li>
-                               </ul>
-                            </div>
-                        </div>
+                    
                     </div>
                 </div>
               

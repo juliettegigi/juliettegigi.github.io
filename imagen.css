@@ -68,5 +68,8 @@ svg{
    #mano{
     fill:#F7E6DC;
     transform: translate(0px, 0px);
-    animation:a1 1s ease-in-out 0s infinite normal  forwards;
    }
+   #mano2{fill:#F3DBCC;}
+   #mano3{fill:#F3DBCC}
+#mano4{fill:#F3DBCC}
+   #mano,#mano2,#mano3, #mano4{animation:a1 1s ease-in-out 0s infinite normal  forwards;}
