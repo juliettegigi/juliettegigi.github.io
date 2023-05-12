@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+html,body{
+     font-family: 'Roboto', sans-serif;
+    width:100vw;
+    margin:0px;
+    padding:0px;
+    background-color: cornsilk;
+}
+  .titulo{
+   
+    position:relative;    
+    width:100vw;
+    height:80vh; 
+}
+
+
+.contenedor{
+    height:100%;
+    width:100%;
+    position:absolute;
+    bottom:0px;
+    right: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.divTitulo{
+    display: flex;
+    flex-direction: column;
+    height:20%;
+    width:20%;
+    box-shadow:#5D2F1F -5px 7px 10px 2px; 
+    background: -webkit-linear-gradient(top, #75C4B8,transparent); 
+   justify-content: center;
+   align-items: center;
+  animation: mianimacion 10s ease-in 0s infinite normal none; 
+   
+}
+
+@keyframes mianimacion { 
+  
+    10%{         
+       font-size: 2em;
+       background-color: rgba(7, 54, 73, 0.881);        
+        height:auto;
+        width:auto;
+        
+        }
+        50%{       background: -webkit-linear-gradient(top, #75C4B8,transparent);   
+          font-size: 1em;
+            transform: rotateY(10deg);
+           
+            }
+           
+
+
+  
+
+  }
+
+img{
+    height:30rem;
+    width: 40rem;
+}
+
+  .contenedor2{
+    height: 30rem;
+    width: 40rem;
+    position:relative;
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    
+  }
+
+  #svgHome{
+    height: 100%;
+    width: 100%;
+  }
+
+  .lateral{
+    display:flex;
+    
+    position:absolute;
+    height: 30rem;
+    width: 3rem;
+   
+    bottom:0px;
+    visibility: hidden;
+  }
+  .l1{
+    left:0px;
+   
+  }
+  .l2{
+    right:0px;
+  }
+  .div2{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    
+    margin-top: 1rem;
+   
+  }
+.contenido{
+  position:relative;
+}
+  .carruselTitulo{
+    display:flex;
+    align-items: end;
+    justify-content: center;
+    position:absolute;
+    bottom:0px;
+    height: 30rem;
+    width: 100%;
+  }
+  .carruselTitulo a{
+    background-color: rgba(7, 54, 73, 0.581);
+    width: 100%;
+    padding: 0.5rem;
+    color:white;
+  }

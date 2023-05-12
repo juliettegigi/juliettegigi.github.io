@@ -16,7 +16,8 @@
 
         
             <div id="pica" title="home"><!-- img -->
-                     <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                <a href="./index.html">
+                     <svg id="icono" version="1.1"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
             viewBox="30 246.2 672 308.8" enable-background="new 30 246.2 672 308.8" xml:space="preserve">
             <path fill="#EB5E69" d="M686.5,246.2h-649v298.4h649V246.2z"/>
             <defs>
@@ -606,6 +607,7 @@
             </g>
                      </svg>
                 <!-- fin img -->
+                </a>
             </div>
             <div class="tituloNav">
                     <div class="titulo">
@@ -1025,7 +1027,34 @@
 
 </section>
     </main>
-    <a href="#arriba" class="subir">☝Ir arriba</a>
+    <!-- <a href="#arriba" class="subir">☝Ir arriba</a> -->
+
+
+    <script>
+        window.onscroll = function() {myFunction()};
+    let cantidad=true;
+    let le=window.screen.height/2;
+    function myFunction() {
+      if (document.documentElement.scrollTop > le && cantidad) {
+        const elem=document.createElement("a");
+        elem.href="#arriba";
+        elem.className="subir";
+        elem.innerHTML="☝Ir arriba";
+        document.body.appendChild(elem);
+        cantidad=false;
+      } 
+      else{
+        console.log("a ber_",document.querySelector(".subir"));
+        if(document.querySelector(".subir")!=null && document.documentElement.scrollTop<=le && !cantidad){
+             console.log("entro?");
+            document.body.removeChild(document.querySelector(".subir"));
+            cantidad=true;
+        }
+       
+              
+          }
+    }
+    </script>
 </body>
 
 </html>

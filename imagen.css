@@ -1,3 +1,5 @@
+
+
 #tomate1{
     
     fill:#D10F42 ;
@@ -41,10 +43,7 @@
     transform: rotate(70);
 }
 
-svg{
-    height: 7em;
-    width: 16em;
-}
+
 
 #cuchillo{
     fill:#C6C6C5;
@@ -73,3 +72,10 @@ svg{
    #mano3{fill:#F3DBCC}
 #mano4{fill:#F3DBCC}
    #mano,#mano2,#mano3, #mano4{animation:a1 1s ease-in-out 0s infinite normal  forwards;}
+
+
+
+#icono{
+    height: 7em;
+    width: 16em;
+}

@@ -301,13 +301,10 @@ html{
 
 
 
-
 /*---------------------------------------------inicio media*/
 @media (max-width:800px) {
 
-header{
-  width: 98vw;
-}
+
 .titulo{
   font-size: 0.5rem;
 }
@@ -320,7 +317,7 @@ header{
    header{
     height: auto;
     flex-direction: column;
-    width:100vw;
+    width: 97vw;
   } 
   .tituloNav{
     flex-direction: row-reverse;
@@ -354,10 +351,16 @@ header{
   }
 main{
   flex-direction: column;
+    width:97vw;
+    padding:0;
+  
+  
+
 }
 aside {
   display:block;
   width: 80vw;
+  margin:auto;
   height: auto;
 }
 aside a{
