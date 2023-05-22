@@ -1,34 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="./css/form.css">
+    <link rel="stylesheet" href="./css/estilo-index.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h1>Tu form</h1>
+    <div class="div2">
 
-    <label>Nombre y apellido:
-        <input type="text">
-    </label>
-    <label>Código postal:
-        <input type="text" name="" id="">
-    </label>
-    <label>Provincia:
-        <input type="text" name="" id="">
-    </label>
-    <label>Ciudad:
-        <input type="text" name="" id="">
-    </label>
-    <label>Calle:
-        <input type="text" name="" id="">
-    </label>
-    <label>Número:
-        <input type="text" name="" id="">
-    </label>
-    <label>Teléfono de contacto:
-        <input type="text" name="" id="">
-    </label>
+        <div class="contenedor2" onmouseover="handlerMouseOver()" onmouseout="handlerMouseOut()">
+            <div class="contenido">
+                <div><img src="./imgs/1.jpg" alt="blog" ></div>
+                
+            </div>
+            <div onclick="flecha(false)" class="lateral l1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM271 135c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-87 87 87 87c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L167 273c-9.4-9.4-9.4-24.6 0-33.9L271 135z"/></svg></div>
+            <div onclick="flecha(true)" class="lateral l2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM241 377c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239c9.4 9.4 9.4 24.6 0 33.9L241 377z"/></svg></div>
+
+        </div>
+        
+    </div>
+
+    <form action="" name="miForm">
+        <fieldset id="identificacion">
+            <legend>Identificación</legend>
+            <label>Mail/s:
+                <input oninput="validar1(event)" type="text" placeholder="info@dominio.com" name="email">
+                <p id="email" class="error">ERROR</p>
+            </label>
+            <label>Nombre/s:
+                <input oninput="validar1(event)" type="text" name="nombre">
+                <p id="nombre" class="error">ERROR</p>
+            </label>
+            <label>Apellido/s:
+                <input oninput="validar1(event)" type="text" name="apellido" id="">
+                <p id="apellido" class="error">ERROR</p>
+            </label>
+            <label>DNI:
+                <input oninput="validar1(event)" type="text" name="dni" id="">
+                <p id="dni" class="error">ERROR</p>
+            </label>
+            <label class="telefono" for="telefono2" id="h0">Teléfono</label>
+            <div id="telefono">
+                <label class="telefono" id="h1">Código de área
+                    <input oninput="validar1(event)" type="text" name="telefono1" id="telefono11">
+                    
+                </label> 
+                <label class="telefono" id="h2">
+                            Número
+                    <input disabled oninput="validar1(event)" type="text" name="telefono2" id="telefono22">
+                    <p id="telefono2" class="error">ERROR</p>
+                </label>                 
+              
+        
+            </div>
+            <p id="telefono1" class="error">ERROR</p>
+            <button type="button" disabled  onclick="achicarDiv(event)" id="boton">siguiente</button>
+        </fieldset>
+
+        <label>Código postal:
+            <input type="text" name="" id="">
+        </label>
+        <label>Dirección:
+            <input type="text" name="" id="">
+        </label>
+        <label>Ciudad:
+            <select id="ciudad">
+               <option value="op1">San Luis</option>
+               <option value="op2">Mendoza</option>
+               <option value="op3">Córdoba</option>
+            </select>
+           
+        </label>
+    </form>
+    <script src="./js/form-validacion.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>

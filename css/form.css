@@ -1,0 +1,80 @@
+img{height: 40%;}
+
+
+.error{
+    line-height:0px;
+    margin:7px;
+    color:red;
+}
+input:focus{
+     box-shadow: -2px -2px 2px 2px;
+}
+
+label,input{
+    display:block;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 1rem;  
+    
+}
+
+label{
+    margin: 0.7rem;
+}
+input{margin:2px;}
+.siguiente{
+    color:red;
+    background-color: #fa8264;
+    border-style:outset;
+    width: fit-content;
+    height: fit-content;
+    padding: 5px;
+    margin:1rem;
+    align-self: flex-end;
+}
+.siguienteHabilitado{
+    color:green;
+}
+
+.siguiente p{margin:0px;}
+
+#identificacion{
+display: flex;
+flex-direction: column;
+}
+
+#telefono{
+    display: flex;
+    flex-direction: row;
+    vertical-align:text-bottom;
+   
+   justify-content: start;
+}
+
+.telefono{
+    margin:2px;
+    padding: 0px;
+}
+
+.error{
+    visibility:hidden;
+    
+}
+
+#h0{
+    flex:1;
+}
+#h1{
+    flex:1;
+}
+
+#h2{
+    flex:5;
+}
+.tel{
+    position:relative;
+}
+
+body{
+    display:flex;
+}
