@@ -52,7 +52,10 @@ switch(e.target.name){
         
     case "telefono2":
             const t=document.getElementById("telefono11");
-            if( !/^[0-9]$/.test(e.target.value) && (e.target.value+t.value).length!==10  ){
+            console.log(e.target.value+t.value);
+            console.log((e.target.value+t.value).length);
+            console.log((e.target.value+t.value).length!==10);
+            if( (!/^[0-9]$/.test(e.target.value)) && (e.target.value+t.value).length!==10  ){
                errores["telefono2"]="introduzca un número válido , por favor";
             }
     
