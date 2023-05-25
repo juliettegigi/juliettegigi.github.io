@@ -17,12 +17,29 @@ const carruselIndex={
 
 
 const carruselForm={
-    b: true,
     i:0,
-    arreglo:[`<div><img src="./imgs/img001.jpg"></div>`,`<div><img src="./imgs/img003.jpg"></div>`,`<div><img src="./imgs/img004.jpg"></div>`,`<div><img src="./imgs/img005.jpg"></div>`,`<div><img src="./imgs/img006.jpg"></div>`]
+    arreglo:[]
 }
+initArreglo();
 
-
+function initArreglo(){
+   /*5 imágenes: tabla de algunos valores nutritivos en gramos
+   efectos y orígenes de algunas vitaminas 
+   indice alfabético de términos de cocina
+   presentación de la buena mesa
+   la cristalería
+   */
+    const arrSrcImg=["./imgs/img001.jpg","./imgs/img003.jpg","./imgs/img004.jpg","./imgs/img005.jpg","./imgs/img006.jpg"];
+    for(let i=0; i<arrSrcImg.length;i++){
+        const elem1=document.createElement("div");
+        const elem2=document.createElement("img");
+        elem2.src=arrSrcImg[i];
+        elem1.appendChild(elem2);
+        carruselForm.arreglo.push(elem1);
+        console.log(carruselForm.arreglo[i]);
+    }
+   
+}
 
 
 /*referencia a las barras laterales */
@@ -48,20 +65,22 @@ function handlerMouseOut(){
     arr[1].style.visibility="hidden";
 }
 
-function flecha(obj){
+function flecha(obj,b){
+
     /*referencia al contenido */
 const divContenido=document.querySelector(".contenido");
     const element=document.createElement("div");
     element.className="contenido";
-if(obj.b)
+if(b) /* si b es true==> es la flecha de la derecha */
     obj.i++;
 else {obj.i--;
-     if(obj.i===-1)
-       obj.i=arr.length-1;
 }    
     obj.i=obj.i%obj.arreglo.length;
+    if(obj.i<0)
+      obj.i=obj.arreglo.length+obj.i;
 console.log(obj.i);
-    element.innerHTML=obj.arreglo[obj.i];
+obj.arreglo[obj.i].className="carrusel";
+    element.appendChild(obj.arreglo[obj.i]);
  
     div2.replaceChild(element,divContenido);
 }
