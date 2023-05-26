@@ -1,20 +1,54 @@
 
+const elementosCarruselIndex={
+    img:["./imgs/blog.png", "./imgs/libro2.png"],
+    alt:["blog","blog"],
+    href:["./bocaditos.html","./formulario.html"],
+    h1:["Accede a nuestro blog","Querés el libro en tus manos?"]
+
+}
+
 const carruselIndex={
     b: true,
     i:0,
-    arreglo:[`<div><img src="./imgs/blog.png" alt="blog" ></div>
-<div class="carruselTitulo">
-    <a href="./bocaditos.html"><h1 >Accede a nuestro blog</h1></a>
-</div>`,
-`<div><img src="./imgs/libro2.png" alt="blog" ></div>
-<div class="carruselTitulo">
-<a href="./formulario.html">
-    <h1>Querés el libro en tus manos?</h1>
-</a>
-</div>
-`]
+    arreglo:[]
+}
+/*<div>
+     <img src="./imgs/blog.png" alt="blog" >
+  </div>
+  <div class="carruselTitulo">
+    <a href="./bocaditos.html">
+        <h1 >Accede a nuestro blog</h1>
+        </a>
+  </div>`,
+ */
+function initArregloCarruselIndex(){
+    for(let i=0;i<elementosCarruselIndex.img.length;i++){
+        const div0=document.createElement("div");
+        const div1=document.createElement("div");
+        const img=document.createElement("img");
+        img.id="imgc1";
+        const div2=document.createElement("div");
+        const a=document.createElement("a");
+        const h1=document.createElement("h1");
+        img.src=elementosCarruselIndex.img[i];
+        img.alt=elementosCarruselIndex.alt[i];
+        div1.appendChild(img);
+        div2.className="carruselTitulo";
+        a.href=elementosCarruselIndex.href[i];
+        console.log("asas",a.href);
+        h1.innerHTML=elementosCarruselIndex.h1[i];
+        a.appendChild(h1);
+        div2.appendChild(a);
+        div0.appendChild(div1);
+        div0.appendChild(div2);
+        carruselIndex.arreglo.push(div0);
+    }
+   
+    
+
 }
 
+initArregloCarruselIndex();
 
 const carruselForm={
     i:0,

@@ -60,7 +60,9 @@ html,body{
 
   }
 
- .carrusel{
+
+
+ .carrusel, #imgc1{
     height:30rem;
     width: 40rem;
 }
