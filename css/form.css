@@ -1,3 +1,7 @@
+#envio{
+    display: none;
+}
+
 #imgsMini{
    display:flex;
    flex-direction: column;

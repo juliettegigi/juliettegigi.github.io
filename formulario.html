@@ -27,7 +27,7 @@
         </div>
     </div>
 
-    <form onsubmit="validar()" name="miForm">
+    <form onsubmit="return handlerOnSubmit()" >
         <fieldset id="identificacion">
             <legend>Identificación</legend>
             <label>Mail/s:
@@ -39,11 +39,11 @@
                 <p id="nombre" class="error">ERROR</p>
             </label>
             <label>Apellido/s:
-                <input oninput="validar1(event)" type="text" name="apellido" id="">
+                <input oninput="validar1(event)" type="text" name="apellido" >
                 <p id="apellido" class="error">ERROR</p>
             </label>
             <label>DNI:
-                <input oninput="validar1(event)" type="text" name="dni" id="">
+                <input oninput="validar1(event)" type="text" name="dni">
                 <p id="dni" class="error">ERROR</p>
             </label>
             <label class="telefono" for="telefono2" id="h0">Teléfono</label>
@@ -61,23 +61,27 @@
         
             </div>
             <p id="telefono1" class="error">ERROR</p>
-            <button type="button" disabled  onclick="achicarDiv(event)" id="boton">siguiente</button>
+            <button type="button" disabled  onclick="achicarDiv(event,'identificacion')" id="boton">siguiente</button>
         </fieldset>
 
-        <label>Código postal:
-            <input type="text" name="" id="">
-        </label>
+        <fieldset id="envio">
+            <legend>Envío</legend> 
         <label>Dirección:
-            <input type="text" name="" id="">
+            <input type="text" name="direccion" oninput="validarDire(event)">
+            <p id="direccion" class="error">campo obligatorio</p>
         </label>
         <label>Ciudad:
             <select id="ciudad">
-               <option value="op1">San Luis</option>
-               <option value="op2">Mendoza</option>
-               <option value="op3">Córdoba</option>
+               <option value="San Luis" selected>San Luis</option>
+               <option value="Mendoza">Mendoza</option>
+               <option value="Córdoba">Córdoba</option>
             </select>
            
         </label>
+        <button type="button" disabled  onclick="achicarDiv(event,'envio')" id="boton">Enviar</button>
+        
+        </fieldset>
+        <input type="submit" value="Enviar">
     </form>
     <script src="./js/form-validacion.js"></script>
     <script src="./js/index.js"></script>

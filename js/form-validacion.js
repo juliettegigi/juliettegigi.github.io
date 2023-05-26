@@ -1,10 +1,26 @@
+let datosPersonales={email:"",nombres:"",apellidos:"",dni:"",telefono:"",direccion:"",ciudad:""};
 let errores={nombre:true,apellido:true,email:true,dni:true,telefono1:true,telefono2:true};
-const boton=document.getElementById("boton");
+
 const t2=document.getElementById("telefono22");
 
 
+function validarDire(e){
+    const boton=document.getElementById("boton");
+    const pe=document.getElementById(e.target.name);
+    if(e.target.value===""){
+        pe.style.visibility="visible";
+        boton.disabled=true; 
+        boton.style.color="red";
+    }
+    else{pe.style.visibility="hidden";
+        boton.style.color="green";
+        boton.disabled=false;
+    }
+      
+}
+
 function validar1(e){
-   
+    const boton=document.getElementById("boton"); 
     const pe=document.getElementById(e.target.name);
 switch(e.target.name){
     case "email": 
@@ -65,17 +81,17 @@ switch(e.target.name){
             break;     
 }
   
-if(Object.keys(errores).length==0){
+if(Object.keys(errores).length==0){ //si no hay errores en el form habilito el botón
   
     boton.style.color="green";
     boton.disabled=false;
 }
-else{
-   if( errores[e.target.name]){
+else{   //sino si el input está mal==> pongo el mensaje de error
+   if( errores[e.target.name]){    
     pe.innerHTML=errores[e.target.name];
     pe.style.visibility="visible";
    }
-   
+boton.disabled=true;
 boton.style.color="red";
 }
 
@@ -83,28 +99,37 @@ boton.style.color="red";
 
 
 
-function achicarDiv(e){
-const id=document.getElementById("identificacion");
-const inputs=document.getElementsByTagName("input");
+function achicarDiv(e,id){
+const fieldset=document.getElementById(id);
+const inputs=fieldset.elements;
 const ps=[];
-for(let i=0 ; i<6 ;i++ ){
-    const p=document.createElement("p");
-    if(i===1 || i===4)
-        p.innerHTML=inputs[i].value+" "+inputs[++i].value;
-    else
-       p.innerHTML=inputs[i].value;
+for(let i=0 ; i<inputs.length ;i++ ){
+    const p=document.createElement("p");//<p> valor del input</p>
+    if(inputs[i].name=="nombre" || inputs[i].name=="telefono1")
+       p.innerHTML=inputs[i].value+" "+inputs[++i].value;
+    else if(inputs[i].name!=="dni")p.innerHTML=inputs[i].value;   
     ps.push(p);
 }
 
-while(id.firstChild){
+while(fieldset.firstChild){//remuevo todos los hijos del fieldset
       
-  id.removeChild(id.firstChild);
+  fieldset.removeChild(fieldset.firstChild);
 }
-for(let i=0 ; i<4 ;i++ ){
-  if(i===2)continue;
-  id.appendChild(ps[i]);
+for(let i=0 ; i<ps.length ;i++ )
+  fieldset.appendChild(ps[i]);
+
+
+
+if(id==="identificacion"){
+    const elemento=document.getElementById("envio");
+    elemento.style.display="block";
+}
+
 }
 
 
+function handlerOnSubmit(){
+   
+   return false;//si retorno false ==> no se recarga la page
 }
 
