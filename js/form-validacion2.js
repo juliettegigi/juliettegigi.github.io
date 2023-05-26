@@ -1,5 +1,3 @@
-
-
 let datosPersonales={email:"",nombre:"",apellido:"",dni:"",telefono1:"",telefono2:"",direccion:"",ciudad:""};
 let errores={nombre:true,apellido:true,email:true,dni:true,telefono1:true,telefono2:true};
 
@@ -12,10 +10,10 @@ function validarDire(e){
     if(e.target.value===""){
         pe.style.visibility="visible";
         boton.disabled=true; 
-        boton.style.color="red";
+        //boton.style.color="red";
     }
     else{pe.style.visibility="hidden";
-        boton.style.color="green";
+       // boton.style.color="green";
         boton.disabled=false;
         datosPersonales["direccion"]=e.target.value;
         
@@ -89,7 +87,7 @@ switch(e.target.name){
   
 if(Object.keys(errores).length==0){ //si no hay errores en el form habilito el botón
   
-    boton.style.color="green";
+    //boton.style.color="green";
     boton.disabled=false;
 }
 else{   //sino si el input está mal==> pongo el mensaje de error
@@ -98,50 +96,84 @@ else{   //sino si el input está mal==> pongo el mensaje de error
     pe.style.visibility="visible";
    }
 boton.disabled=true;
-boton.style.color="red";
+//boton.style.color="red";
 }
  
     }
 
+    function asignarValoresAlform(id,contenidoField1){
+        const fieldset=document.getElementById(id);
+        fieldset.innerHTML=contenidoField1;
+        const inputs=fieldset.elements;
+        for(let i=0;i<inputs.length;i++){
+          inputs[i].value=datosPersonales[inputs[i].name];
+        }
+    }
+    
 
 
+
+function crearContenidoField1(){
     const contenidoField1=` <legend>Identificación</legend>
     <label>Mail/s:
-        <input oninput="validar1(event)" type="text" value=${datosPersonales["email"]} name="email">
+        <input oninput="validar1(event)" type="text"  name="email">
         <p id="email" class="error">ERROR</p>
     </label>
     <label>Nombre/s:
-        <input oninput="validar1(event)" type="text" name="nombre" value=${datosPersonales["nombre"]} >
+        <input oninput="validar1(event)" type="text" name="nombre" >
         <p id="nombre" class="error">ERROR</p>
     </label>
     <label>Apellido/s:
-        <input oninput="validar1(event)" type="text" name="apellido" value=${datosPersonales["apellido"]} >
+        <input oninput="validar1(event)" type="text" name="apellido"  >
         <p id="apellido" class="error">ERROR</p>
     </label>
     <label>DNI:
-        <input oninput="validar1(event)" type="text" name="dni" value=${datosPersonales["dni"]} >
+        <input oninput="validar1(event)" type="text" name="dni"  >
         <p id="dni" class="error">ERROR</p>
     </label>
     <label class="telefono" for="telefono2" id="h0">Teléfono</label>
     <div id="telefono">
         <label class="telefono" id="h1" >Código de área
-            <input oninput="validar1(event)" type="text" name="telefono1" id="telefono11" value=${datosPersonales["telefono1"]} >
+            <input oninput="validar1(event)" type="text" name="telefono1" id="telefono11"  >
             
         </label> 
         <label class="telefono" id="h2">
                     Número
-            <input disabled oninput="validar1(event)" type="text" name="telefono2" id="telefono22" value=${datosPersonales["telefono2"]} >
+            <input  oninput="validar1(event)" type="text" name="telefono2" id="telefono22" >
             <p id="telefono2" class="error">ERROR</p>
         </label>                 
       
     
     </div>
     <p id="telefono1" class="error">ERROR</p>
-    <button type="button" disabled  onclick="achicarDiv(event,'identificacion')" id="boton">siguiente</button>
+    <button type="button" onclick="achicarDiv(event,'identificacion')" id="boton">siguiente</button>
     `
-    
+  
+  asignarValoresAlform("identificacion",contenidoField1)
+
+}
 
 
+function crearContenidoField2(){
+    const contenidoField2=`  <legend>Envío</legend> 
+    <label>Dirección:
+        <input type="text" name="direccion" oninput="validarDire(event)">
+        <p id="direccion" class="error">campo obligatorio</p>
+    </label>
+    <label>Ciudad:
+        <select id="ciudad">
+           <option value="San Luis" selected>San Luis</option>
+           <option value="Mendoza">Mendoza</option>
+           <option value="Córdoba">Córdoba</option>
+        </select>
+       
+    </label>
+    <button type="button" disabled  onclick="achicarDiv(event,'envio')" id="boton">Enviar</button>
+     `
+asignarValoresAlform("envio",contenidoField2);
+
+
+}
 
 
 
@@ -176,11 +208,27 @@ for(let i=0 ; i<ps.length ;i++ )
   fieldset.appendChild(ps[i]);
 
 
+  const boton=document.createElement("button");
+  boton.type="button";
+  boton.innerHTML="editar";
 
 if(id==="identificacion"){
     const elemento=document.getElementById("envio");
     elemento.style.display="block";
+    boton.id="btn1";
 }
+else{
+    boton.id="btn2"; 
+}
+boton.addEventListener("click",(e)=>{
+    const idButon=document.getElementById(e.target.id);
+ 
+    if(idButon.id==="btn1"){
+       crearContenidoField1();
+    }
+    else crearContenidoField2();
+})
+fieldset.appendChild(boton);
 
 
 }
@@ -191,4 +239,5 @@ function handlerOnSubmit(){
    console.log(datosPersonales);
    return false;//si retorno false ==> no se recarga la page
 }
+
 

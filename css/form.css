@@ -111,6 +111,12 @@ body{
     border-color: #a02000;
 }
 
+#boton:disabled{
+    color:"red";
+}
+#boton:enabled{
+    color:"green";
+}
 
 @media (max-width:800px) {
 
