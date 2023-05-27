@@ -108,6 +108,10 @@ boton.disabled=true;
         for(let i=0;i<inputs.length;i++){
           inputs[i].value=datosPersonales[inputs[i].name];
         }
+
+        if(id==="envio"){
+            document.getElementById("ciudad").value=datosPersonales.ciudad;
+        }
     }
     
 
@@ -168,7 +172,7 @@ function crearContenidoField2(){
         </select>
        
     </label>
-    <button type="button" disabled  onclick="achicarDiv(event,'envio')" id="boton">Enviar</button>
+    <button type="button"  onclick="achicarDiv(event,'envio')" id="boton">siguiente</button>
      `
 asignarValoresAlform("envio",contenidoField2);
 
@@ -188,6 +192,7 @@ const inputs=fieldset.elements;
 const ps=[];
 if(id==="envio"){
     datosPersonales["ciudad"]=document.getElementById("ciudad").value;
+    
  }
 for(let i=0 ; i<inputs.length ;i++ ){
     const p=document.createElement("p");//<p> valor del input</p>
