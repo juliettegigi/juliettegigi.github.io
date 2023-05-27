@@ -192,7 +192,11 @@ const inputs=fieldset.elements;
 const ps=[];
 if(id==="envio"){
     datosPersonales["ciudad"]=document.getElementById("ciudad").value;
-    
+     /* <input type="submit" value="Enviar"> */
+     const inp=document.createElement("input");
+     inp.type="submit";
+     inp.value="Enviar";
+     document.forms["formulario"].appendChild(inp);
  }
 for(let i=0 ; i<inputs.length ;i++ ){
     const p=document.createElement("p");//<p> valor del input</p>
