@@ -5,7 +5,7 @@ const t2=document.getElementById("telefono22");
 
 
 function validarDire(e){
-    const boton=document.getElementById("boton");
+    const boton=document.getElementById("boton2");
     const pe=document.getElementById(e.target.name);
     if(e.target.value===""){
         pe.style.visibility="visible";
@@ -22,7 +22,7 @@ function validarDire(e){
 }
 
 function validar1(e){
-    const boton=document.getElementById("boton"); 
+    const boton=document.getElementById("boton1"); 
     const pe=document.getElementById(e.target.name);
 switch(e.target.name){
     case "email": 
@@ -101,6 +101,8 @@ boton.disabled=true;
  
     }
 
+
+
     function asignarValoresAlform(id,contenidoField1){
         const fieldset=document.getElementById(id);
         fieldset.innerHTML=contenidoField1;
@@ -150,7 +152,7 @@ function crearContenidoField1(){
     
     </div>
     <p id="telefono1" class="error">ERROR</p>
-    <button type="button" onclick="achicarDiv(event,'identificacion')" id="boton">siguiente</button>
+    <button type="button" onclick="achicarDiv(event,'identificacion',true)" id="boton1">ok</button>
     `
   
   asignarValoresAlform("identificacion",contenidoField1)
@@ -172,7 +174,7 @@ function crearContenidoField2(){
         </select>
        
     </label>
-    <button type="button"  onclick="achicarDiv(event,'envio')" id="boton">siguiente</button>
+    <button type="button"  onclick="achicarDiv(event,'envio',true)" id="boton2">ok</button>
      `
 asignarValoresAlform("envio",contenidoField2);
 
@@ -186,18 +188,33 @@ asignarValoresAlform("envio",contenidoField2);
 
 
 
-function achicarDiv(e,id){
+function achicarDiv(e,id,b){
+
+    function agregarEvento(btn){
+        btn.addEventListener("click",(e)=>{ // click em editar==> cargo el formulario con los datos q se cargaron
+            const idButon=document.getElementById(e.target.id);
+            const btnEnviar=document.getElementById("btnEnviar");
+            btnEnviar.remove();
+            if(idButon.id==="btn1"){
+               crearContenidoField1();
+               document.getElementById("btn2").remove();
+            }
+            else {crearContenidoField2();
+                document.getElementById("btn1").remove();
+            }
+        })
+        
+    
+    } 
+
+
 const fieldset=document.getElementById(id);
 const inputs=fieldset.elements;
 const ps=[];
-if(id==="envio"){
+if(id==="envio")
     datosPersonales["ciudad"]=document.getElementById("ciudad").value;
-     /* <input type="submit" value="Enviar"> */
-     const inp=document.createElement("input");
-     inp.type="submit";
-     inp.value="Enviar";
-     document.forms["formulario"].appendChild(inp);
- }
+    
+ 
 for(let i=0 ; i<inputs.length ;i++ ){
     const p=document.createElement("p");//<p> valor del input</p>
     datosPersonales[inputs[i].name]=inputs[i].value;
@@ -209,35 +226,46 @@ for(let i=0 ; i<inputs.length ;i++ ){
     ps.push(p);
 }
 
-while(fieldset.firstChild){//remuevo todos los hijos del fieldset
+while(fieldset.children.length!==1){//remuevo todos los hijos del fieldset, todos los inputs
       
-  fieldset.removeChild(fieldset.firstChild);
+  fieldset.removeChild(fieldset.lastChild);
 }
-for(let i=0 ; i<ps.length ;i++ )
+for(let i=0 ; i<ps.length ;i++ ) // le pongo los datos ingresados
   fieldset.appendChild(ps[i]);
 
 
-  const boton=document.createElement("button");
-  boton.type="button";
-  boton.innerHTML="editar";
 
-if(id==="identificacion"){
+
+if(id==="identificacion" && !b){    //habilito el fieldset envio 
     const elemento=document.getElementById("envio");
     elemento.style.display="block";
-    boton.id="btn1";
+   console.log("Entro?");
 }
-else{
-    boton.id="btn2"; 
+
+if(id==="envio" || b){  
+    //agrego el botón enviar
+    const botonEnviar=document.createElement("input");
+    botonEnviar.type="submit";
+    botonEnviar.value="Enviar";
+    botonEnviar.id="btnEnviar";
+    document.forms["formulario"].appendChild(botonEnviar);
+    //agrego los botones para editar
+    const botonEditar1=document.createElement("button");
+    botonEditar1.type="button";
+    botonEditar1.innerHTML="editar";
+    botonEditar1.id="btn1";
+    const botonEditar2=document.createElement("button");
+    botonEditar2.type="button";
+    botonEditar2.innerHTML="editar";
+    botonEditar2.id="btn2"; 
+    agregarEvento(botonEditar1);
+    agregarEvento(botonEditar2);
+    const fieldset1=document.getElementById("envio");
+    fieldset1.appendChild(botonEditar2);
+    const fieldset2=document.getElementById("identificacion");
+    fieldset2.appendChild(botonEditar1);
 }
-boton.addEventListener("click",(e)=>{
-    const idButon=document.getElementById(e.target.id);
- 
-    if(idButon.id==="btn1"){
-       crearContenidoField1();
-    }
-    else crearContenidoField2();
-})
-fieldset.appendChild(boton);
+
 
 
 }
