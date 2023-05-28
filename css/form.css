@@ -98,12 +98,15 @@ flex-direction: column;
     position:relative;
 }
 
-body{
+#c1{
     display:flex;
+    justify-content: space-evenly;
 }
 
 .imgsMini{
     margin:5px;
+    border-style: ridge;
+    border-color: rgba(red, green, blue, 0);
 }
 
 .imgsMini:hover{
@@ -121,7 +124,7 @@ body{
 @media (max-width:800px) {
 
 
-    body{
+    #c1{
         flex-direction: column;
         width:75vh;
        
@@ -142,4 +145,9 @@ body{
 #imgmini{
     width: 20%;
 }
+}
+
+
+.titulosForm{
+    text-align: center;
 }

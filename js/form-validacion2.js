@@ -274,6 +274,22 @@ if(id==="envio" || b){
 function handlerOnSubmit(){
     
    console.log(datosPersonales);
+   document.getElementById("form").remove();
+   const div=document.createElement("div");
+   const h=document.createElement("h2");
+   const h2=document.createElement("h2");
+   h2.innerHTML="🏠 HOME";
+   const a=document.createElement("a");
+   a.href="./index.html";
+   a.appendChild(h2);
+   div.appendChild(a);
+   h.innerHTML=`Gracias ${datosPersonales.nombre} ${datosPersonales.apellido} , pronto nos comunicaremos con vos 😃`;
+   h.classList.add("titulosForm");
+   h2.classList.add("titulosForm");
+   div.appendChild(h);
+   document.body.appendChild(div);
+
+
    return false;//si retorno false ==> no se recarga la page
 }
 
