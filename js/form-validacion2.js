@@ -1,3 +1,4 @@
+clearInterval(idInterval);
 let datosPersonales={email:"",nombre:"",apellido:"",dni:"",telefono1:"",telefono2:"",direccion:"",ciudad:""};
 let errores={nombre:true,apellido:true,email:true,dni:true,telefono1:true,telefono2:true};
 
@@ -51,7 +52,7 @@ switch(e.target.name){
         }
         break;
     case "dni":
-        if(!/^[0-9]{7,}$/.test(e.target.value)){
+        if(!/^[0-9]{7,10}$/.test(e.target.value)){
             errores['dni']="introduzca un DNI válido , por favor";
         }
         else {pe.innerHTML="";

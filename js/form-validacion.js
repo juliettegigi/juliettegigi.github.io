@@ -53,7 +53,8 @@ switch(e.target.name){
         }
         break;
     case "dni":
-        if(!/^[0-9]{7,}$/.test(e.target.value)){
+        if(!(/^[0-9]{7,10}$/.test(e.target.value))){
+            console.log(ee);
             errores['dni']="introduzca un DNI válido , por favor";
         }
         else {pe.innerHTML="";

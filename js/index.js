@@ -120,6 +120,9 @@ obj.arreglo[obj.i].className="carrusel";
 }
 
 
+let idInterval=setInterval(()=>{flecha(carruselIndex,true)},5000)
+
+
 
 
 
