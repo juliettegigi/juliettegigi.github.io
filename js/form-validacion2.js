@@ -39,7 +39,7 @@ switch(e.target.name){
     case "nombre":
     case "apellido":    
         e.target.value=e.target.value.toUpperCase();
-        if(!/^[A-ZÁ-ÚÄ-ÜÑ ]+[A-ZÁ-ÚÄ-ÜÑ]$/.test(e.target.value)){
+        if(!/^[A-ZÁ-ÚÄ-ÜÑ]+( [A-ZÁ-ÚÄ-ÜÑ]+)*$/.test(e.target.value)){
             if(e.target.name==="nombre")
                errores['nombre']="introduzca caracteres válidos , por favor";
             else errores['apellido']="introduzca caracteres válidos , por favor";   

@@ -35,30 +35,11 @@ html,body{
     background: -webkit-linear-gradient(top, #75C4B8,transparent); 
    justify-content: center;
    align-items: center;
-  animation: mianimacion 10s ease-in 0s infinite normal none; 
+
    
 }
 
-@keyframes mianimacion { 
-  
-    10%{         
-       font-size: 2em;
-       background-color: rgba(7, 54, 73, 0.881);        
-        height:auto;
-        width:auto;
-        
-        }
-        50%{       background: -webkit-linear-gradient(top, #75C4B8,transparent);   
-          font-size: 1em;
-            transform: rotateY(10deg);
-           
-            }
-           
 
-
-  
-
-  }
 
 
 
