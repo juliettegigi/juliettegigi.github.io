@@ -1,47 +1,80 @@
 let toggle=false;
-const objeto={c0:["comentario1","comentario 2"],c1:["comentario 3"]};
+const objeto={c0:["comentario1","comentario 2"],
+              c1:["comentario 3"]};
 let j=2;
 
 
-function addComentario(event){
-    const i=event.target.attributes.name.nodeValue.substring(3);
-    objeto[i].push(document.getElementById("t"+i).value);
-    const div=document.getElementById(i);
-    const nodosHijos=div.childNodes;
-    const elementoDiv=document.createElement("div");
-    elementoDiv.innerHTML=`<p>${objeto[i][objeto[i].length-1]}
-    </p>`;
-    elementoDiv.classList.add("contenedorReceta");
-    elementoDiv.classList.add("comc");
-    div.insertBefore(elementoDiv,nodosHijos[3]);
-}
 
 
-function crearContenido(propiedad){
-   let comentarios=objeto[propiedad];
+
+function crearContenido(idDiv){
+   //recibo el id del div en donde tengo que colocar los comentarios que están en el objeto
+   let comentarios=objeto[idDiv];
    if(!comentarios){
-    objeto[propiedad]=[];
-    comentarios=objeto[propiedad];
+    objeto[idDiv]=[];
+    comentarios=objeto[idDiv];
    }
      
-   let ps="";
+// creo un textArea
+   const textArea=document.createElement("textarea");
+   textArea.id="t"+idDiv;
+   textArea.placeholder="ingrese su comentario...";
+   textArea.classList.add("texta");
+// creo un boton
+   const boton=document.createElement("button");
+   boton.addEventListener("click",function (event){
+              const i=event.target.attributes.name.nodeValue.substring(3);
+              objeto[i].push(document.getElementById("t"+i).value);
+              const div=document.getElementById(i);
+              const nodosHijos=div.childNodes;
+              const elementoDiv=document.createElement("div");
+              elementoDiv.innerHTML=`<p>${objeto[i][objeto[i].length-1]}
+              </p>`;
+              elementoDiv.classList.add("contenedorReceta");
+              elementoDiv.classList.add("comc");
+              div.insertBefore(elementoDiv,nodosHijos[3]);
+            }
+);
+boton.name="btn"+idDiv;
+boton.innerHTML="Agregar";
+   
+
+// creo un contenedor, va a contener el textarea y al botón y todos los comentarios
+  const contenedor=document.createElement("div");
+  contenedor.appendChild(textArea);
+  contenedor.appendChild(boton);
+
    for(let i=comentarios.length-1;i>=0;i--){
-      ps+=`<div class="contenedorReceta comc"><p>${comentarios[i]}</p></div>`;     
+     const div=document.createElement("div");
+     div.classList.add("contenedorReceta");
+     div.classList.add("comc");
+     const p=document.createElement("p");
+     p.innerHTML= comentarios[i];
+     div.appendChild(p);
+    contenedor.appendChild(div);    
    }
-    return `<textarea class="texta" id=${"t"+propiedad} placeholder="ingrese su comentario..."></textarea>
-          <button onclick="addComentario(event)" name=${"btn"+propiedad} >agregar</button> 
-          ${ps} `; 
+
+   
+  return contenedor;
+
+
 }
 function mostrarComentarios(e){
-    console.log(e);
+    const idDiv=e.target.attributes.name.nodeValue;
    if(toggle){
     
     toggle=!toggle;
-    document.getElementById(e.target.attributes.name.nodeValue).innerHTML=""; 
+    //el ícono de comentarios tiene el evento click y tiene un name asociado a un div
+    document.getElementById(idDiv).innerHTML=""; 
     return;
    }
-    const c=crearContenido(e.target.attributes.name.nodeValue);
-    document.getElementById(e.target.attributes.name.nodeValue).innerHTML=c;
+   // creo el contenido del div , le paso el id del div
+    const c=crearContenido(idDiv);
+    document.getElementById(idDiv).appendChild(c);
+    // focus al text area
+    document.getElementById("t"+idDiv).focus();
     toggle=!toggle;
+
+
 }
 

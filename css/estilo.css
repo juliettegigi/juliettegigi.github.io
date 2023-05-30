@@ -16,8 +16,11 @@ pre,.texta,.comentarios{
 }
 .logoComentar{
   width: 2rem;
-
+  fill:lightseagreen;
 }
+
+
+
 .comentarLogo{
   width: 100%;
   display:flex;
