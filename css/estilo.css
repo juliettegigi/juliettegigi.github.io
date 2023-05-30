@@ -18,7 +18,9 @@ pre,.texta,.comentarios{
   width: 2rem;
   fill:lightseagreen;
 }
-
+.logoComentar:hover{
+  cursor: pointer;
+}
 
 
 .comentarLogo{

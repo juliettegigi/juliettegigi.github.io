@@ -1,3 +1,4 @@
+let ultimoC="c71";
 let toggle=false;
 const objeto={c0:["comentario1","comentario 2"],
               c1:["comentario 3"]};
@@ -23,16 +24,18 @@ function crearContenido(idDiv){
 // creo un boton
    const boton=document.createElement("button");
    boton.addEventListener("click",function (event){
-              const i=event.target.attributes.name.nodeValue.substring(3);
-              objeto[i].push(document.getElementById("t"+i).value);
-              const div=document.getElementById(i);
-              const nodosHijos=div.childNodes;
+                textArea.value=textArea.value.trim();
+             if(textArea.value!=""){
+              const i=event.target.name.substring(3);
+              objeto[i].push(document.getElementById("t"+i).value);             
               const elementoDiv=document.createElement("div");
-              elementoDiv.innerHTML=`<p>${objeto[i][objeto[i].length-1]}
-              </p>`;
+              elementoDiv.innerHTML=`<p>${objeto[i][objeto[i].length-1]}</p>`;
               elementoDiv.classList.add("contenedorReceta");
               elementoDiv.classList.add("comc");
-              div.insertBefore(elementoDiv,nodosHijos[3]);
+              boton.insertAdjacentElement("afterend",elementoDiv);
+             }
+            
+             
             }
 );
 boton.name="btn"+idDiv;
