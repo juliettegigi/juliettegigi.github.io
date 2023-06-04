@@ -29,7 +29,6 @@ img{
 }
 
 .error{
-    line-height:0px;
     margin:7px;
     color:red;
 }
@@ -47,6 +46,7 @@ label,input{
 
 label{
     margin: 0.7rem;
+    height: min-content;
 }
 input{margin:2px;}
 .siguiente{
@@ -73,8 +73,7 @@ flex-direction: column;
 #telefono{
     display: flex;
     flex-direction: row;
-    vertical-align:text-bottom;
-   
+   align-items:flex-end;
    justify-content: start;
 }
 
@@ -124,6 +123,25 @@ flex-direction: column;
 #boton:enabled{
     color:"green";
 }
+.titulosForm{
+    text-align: center;
+}
+
+
+form{
+    width:100%;
+}
+
+
+#form{
+    width: 30%;
+}
+
+label{display:flex; flex-direction: column;justify-content: end;}
+
+#telefono2{
+    align-self: last baseline;
+}
 
 @media (max-width:800px) {
 
@@ -149,9 +167,14 @@ flex-direction: column;
 #imgmini{
     width: 20%;
 }
+#form{
+    width: 100%;
+}
+
 }
 
 
-.titulosForm{
-    text-align: center;
+#mensaje{
+    height: 500px;
+    margin-top: 2rem;
 }

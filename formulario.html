@@ -35,7 +35,7 @@
             <form onsubmit="return handlerOnSubmit()" name="formulario">
                 <fieldset id="identificacion">
                     <legend>Identificación</legend>
-                    <label>Mail/s:
+                    <label>email:
                         <input oninput="validar1(event)" type="text" placeholder="info@dominio.com" name="email">
                         <p id="email" class="error">ERROR</p>
                     </label>
@@ -53,19 +53,19 @@
                     </label>
                     <label class="telefono" for="telefono2" id="h0">Teléfono</label>
                     <div id="telefono">
-                        <label class="telefono" id="h1">Código de área
+                        <label class="telefono" id="h1"><span>Código de área</span>
                             <input oninput="validar1(event)" type="text" name="telefono1" id="telefono11">
         
                         </label>
                         <label class="telefono" id="h2">
-                                    Número
+                                    <span>Número</span>
                             <input disabled oninput="validar1(event)" type="text" name="telefono2" id="telefono22">
-                            <p id="telefono2" class="error">ERROR</p>
-                        </label>
-        
+                            
+                        </label>        
         
                     </div>
                     <p id="telefono1" class="error">ERROR</p>
+                    <p id="telefono2" class="error">ERROR</p>
                     <button type="button" disabled  onclick="achicarDiv(event,'identificacion')" id="boton1">siguiente</button>
                 </fieldset>
                 <fieldset id="envio">
@@ -94,5 +94,6 @@
     
 
     <script src="./js/form-imgs-mini.js"></script>
+    <div id="mensaje"></div>
 </body>
 </html>

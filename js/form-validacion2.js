@@ -24,6 +24,7 @@ function validarDire(e){
 }
 
 function validar1(e){
+    const posicionCursor = e.target.selectionStart;
     const boton=document.getElementById("boton1"); 
     const pe=document.getElementById(e.target.name);
 switch(e.target.name){
@@ -31,32 +32,25 @@ switch(e.target.name){
         if(!(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(e.target.value))){
             errores['email']="introduzca un correo electrónico válido, por favor"; 
             }
-        else{ pe.innerHTML=""
+        else{ pe.style.visibility="hidden";
               delete errores["email"];
-                 
-
-    };
+            };
         break;
     case "nombre":
     case "apellido":    
         e.target.value=e.target.value.toUpperCase();
-        if(!/^[A-ZÁ-ÚÄ-ÜÑ]+( [A-ZÁ-ÚÄ-ÜÑ]+)*$/.test(e.target.value)){
-            if(e.target.name==="nombre")
-               errores['nombre']="introduzca caracteres válidos , por favor";
-            else errores['apellido']="introduzca caracteres válidos , por favor";   
-        }
+        if(!/^[A-ZÁ-ÚÄ-ÜÑ]+( [A-ZÁ-ÚÄ-ÜÑ]+)*$/.test(e.target.value))
+           errores[e.target.name]="introduzca caracteres válidos , por favor";
         else {
-            e.target.nextElementSibling.innerHTML="";
-            if(e.target.name==="nombre")
-                delete errores['nombre'];
-            else delete errores['apellido']; 
-        }
+                pe.style.visibility="hidden";
+                delete errores[e.target.name]; 
+            }
         break;
     case "dni":
-        if(!/^[0-9]{7,10}$/.test(e.target.value)){
+        if(!/^[0-9]{7,10}$/.test(e.target.value))
             errores['dni']="introduzca un DNI válido , por favor";
-        }
-        else {pe.innerHTML="";
+        
+        else {pe.style.visibility="hidden";
               delete errores["dni"]
     };
         break;
@@ -67,29 +61,28 @@ switch(e.target.name){
            t2.setAttribute("disabled", true);
         }
 
-        else{ pe.innerHTML="";  
+        else{ pe.style.visibility="hidden";
             delete errores["telefono1"];
             t2.disabled=false; }
         break;  
         
     case "telefono2":
             const t=document.getElementById("telefono11");
-            if( !(  (/^[0-9]*$/.test(e.target.value)) && 
-                    ((e.target.value+t.value).length===10)
-                    )  ){
-               errores["telefono2"]="introduzca un número válido , por favor";
-            }
+            if( ! (/^[0-9]*$/.test(e.target.value)))
+               errores["telefono2"]="introduzca caracteres numéricos , por favor";
+            else if  ((e.target.value+t.value).length!==10)
+                errores["telefono2"]="longitud máxima: 10 caracteres(incluído el código de área)";  
+           
     
             else{ 
-                pe.innerHTML="";  
+                pe.style.visibility="hidden";  
         delete errores["telefono2"];
     }
             break;     
 }
   
 if(Object.keys(errores).length==0){ //si no hay errores en el form habilito el botón
-  
-    //boton.style.color="green";
+    
     boton.disabled=false;
 }
 else{   //sino si el input está mal==> pongo el mensaje de error
@@ -98,9 +91,11 @@ else{   //sino si el input está mal==> pongo el mensaje de error
     pe.style.visibility="visible";
    }
 boton.disabled=true;
-//boton.style.color="red";
 }
  
+e.target.selectionStart=posicionCursor;
+e.target.selectionEnd = posicionCursor;
+
     }
 
 
@@ -122,40 +117,40 @@ boton.disabled=true;
 
 
 function crearContenidoField1(){
-    const contenidoField1=` <legend>Identificación</legend>
-    <label>Mail/s:
-        <input oninput="validar1(event)" type="text"  name="email">
+    const contenidoField1=`          <legend>Identificación</legend>
+    <label>email:
+        <input oninput="validar1(event)" type="text" placeholder="info@dominio.com" name="email">
         <p id="email" class="error">ERROR</p>
     </label>
     <label>Nombre/s:
-        <input oninput="validar1(event)" type="text" name="nombre" >
+        <input oninput="validar1(event)" type="text" name="nombre">
         <p id="nombre" class="error">ERROR</p>
     </label>
     <label>Apellido/s:
-        <input oninput="validar1(event)" type="text" name="apellido"  >
+        <input oninput="validar1(event)" type="text" name="apellido" >
         <p id="apellido" class="error">ERROR</p>
     </label>
     <label>DNI:
-        <input oninput="validar1(event)" type="text" name="dni"  >
+        <input oninput="validar1(event)" type="text" name="dni">
         <p id="dni" class="error">ERROR</p>
     </label>
     <label class="telefono" for="telefono2" id="h0">Teléfono</label>
     <div id="telefono">
-        <label class="telefono" id="h1" >Código de área
-            <input oninput="validar1(event)" type="text" name="telefono1" id="telefono11"  >
-            
-        </label> 
+        <label class="telefono" id="h1"><span>Código de área</span>
+            <input oninput="validar1(event)" type="text" name="telefono1" id="telefono11">
+
+        </label>
         <label class="telefono" id="h2">
-                    Número
-            <input  oninput="validar1(event)" type="text" name="telefono2" id="telefono22" >
-            <p id="telefono2" class="error">ERROR</p>
-        </label>                 
-      
-    
+                    <span>Número</span>
+            <input oninput="validar1(event)" type="text" name="telefono2" id="telefono22">
+            
+        </label>        
+
     </div>
     <p id="telefono1" class="error">ERROR</p>
-    <button type="button" onclick="achicarDiv(event,'identificacion',true)" id="boton1">ok</button>
-    `
+    <p id="telefono2" class="error">ERROR</p>
+    <button type="button" onclick="achicarDiv(event,'identificacion',true)" id="boton1">siguiente</button>
+`
   
   asignarValoresAlform("identificacion",contenidoField1)
 
@@ -163,10 +158,10 @@ function crearContenidoField1(){
 
 
 function crearContenidoField2(){
-    const contenidoField2=`  <legend>Envío</legend> 
+    const contenidoField2=`    <legend>Envío</legend>
     <label>Dirección:
         <input type="text" name="direccion" oninput="validarDire(event)">
-        <p id="direccion" class="error">campo obligatorio</p>
+        <p id="direccion" class="error">hay caracteres inválidos</p>
     </label>
     <label>Ciudad:
         <select id="ciudad">
@@ -174,10 +169,10 @@ function crearContenidoField2(){
            <option value="Mendoza">Mendoza</option>
            <option value="Córdoba">Córdoba</option>
         </select>
-       
+
     </label>
-    <button type="button"  onclick="achicarDiv(event,'envio',true)" id="boton2">ok</button>
-     `
+    <button type="button" disabled  onclick="achicarDiv(event,'envio',true)" id="boton2">siguiente</button>
+`
 asignarValoresAlform("envio",contenidoField2);
 
 
@@ -224,7 +219,7 @@ for(let i=0 ; i<inputs.length ;i++ ){
        p.innerHTML=inputs[i].value+" "+inputs[++i].value;
        datosPersonales[inputs[i].name]=inputs[i].value;
     }
-    else if(inputs[i].name!=="dni")p.innerHTML=inputs[i].value;   
+    else p.innerHTML=inputs[i].value;   
     ps.push(p);
 }
 
@@ -241,7 +236,7 @@ for(let i=0 ; i<ps.length ;i++ ) // le pongo los datos ingresados
 if(id==="identificacion" && !b){    //habilito el fieldset envio 
     const elemento=document.getElementById("envio");
     elemento.style.display="block";
-   console.log("Entro?");
+    document.forms["formulario"]["direccion"].focus();
 }
 
 if(id==="envio" || b){  
@@ -289,7 +284,7 @@ function handlerOnSubmit(){
    h.classList.add("titulosForm");
    h2.classList.add("titulosForm");
    div.appendChild(h);
-   document.body.appendChild(div);
+   document.getElementById("mensaje").appendChild(div);
 
 
    return false;//si retorno false ==> no se recarga la page
