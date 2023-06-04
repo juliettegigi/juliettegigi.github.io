@@ -8,6 +8,7 @@ const t2=document.getElementById("telefono22");
 function validarDire(e){
     const boton=document.getElementById("boton2");
     const pe=document.getElementById(e.target.name);
+    
     if(e.target.value===""){
         pe.style.visibility="visible";
         boton.disabled=true; 

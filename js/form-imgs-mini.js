@@ -7,13 +7,13 @@ for(let i=0;i<carruselForm.arreglo.length;i++) {
     divImgsMini.appendChild(clon);
     
 }  
+
+const imgs=document.querySelectorAll(".imgsMini");
    
-for(let i=0;document.querySelectorAll(".imgsMini").length;i++){
-    document.querySelectorAll(".imgsMini")[i].addEventListener("click",(e)=>{
-          console.log("holiz");
+for(let i=0;i<imgs.length;i++){
+    imgs[i].addEventListener("click",(e)=>{
           carruselForm.i=e.target.id;
           --carruselForm.i;
-          console.log(carruselForm.i);
           flecha(carruselForm,true);
     })
 }

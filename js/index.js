@@ -27,6 +27,7 @@ function initArregloCarruselIndex(){
         const div1=document.createElement("div");
         const img=document.createElement("img");
         img.id="imgc1";
+       img.style.width="90%";
         const div2=document.createElement("div");
         const a=document.createElement("a");
         const h1=document.createElement("h1");
@@ -35,7 +36,6 @@ function initArregloCarruselIndex(){
         div1.appendChild(img);
         div2.className="carruselTitulo";
         a.href=elementosCarruselIndex.href[i];
-        console.log("asas",a.href);
         h1.innerHTML=elementosCarruselIndex.h1[i];
         a.appendChild(h1);
         div2.appendChild(a);
@@ -67,10 +67,10 @@ function initArreglo(){
     for(let i=0; i<arrSrcImg.length;i++){
         const elem1=document.createElement("div");
         const elem2=document.createElement("img");
+       // elem2.style.width="90%";
         elem2.src=arrSrcImg[i];
         elem1.appendChild(elem2);
         carruselForm.arreglo.push(elem1);
-        console.log(carruselForm.arreglo[i]);
     }
    
 }
@@ -112,7 +112,7 @@ else {obj.i--;
     obj.i=obj.i%obj.arreglo.length;
     if(obj.i<0)
       obj.i=obj.arreglo.length+obj.i;
-console.log(obj.i);
+
 obj.arreglo[obj.i].className="carrusel";
     element.appendChild(obj.arreglo[obj.i]);
  
@@ -120,7 +120,17 @@ obj.arreglo[obj.i].className="carrusel";
 }
 
 
-let idInterval=setInterval(()=>{flecha(carruselIndex,true)},5000)
+function menu(){
+ const div=document.querySelector(".contenedor");
+   const botones=document.querySelectorAll(".botones");
+   for(let b of botones){
+            b.classList.remove("none");
+   }
+      
+ div.style.display="flex";
+}
+
+let idInterval=setInterval(()=>{flecha(carruselIndex,true)},3000)
 
 
 

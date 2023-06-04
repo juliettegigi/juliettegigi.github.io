@@ -1,18 +1,140 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 
-html,body{
-     font-family: 'Roboto', sans-serif;
-    width:100vw;
-    margin:0px;
-    padding:0px;
-    background-color: cornsilk;
+body{
+  font-family: 'Roboto', sans-serif;
+width: 100vw;
+ margin:0px;
+ padding:0px;
+ background-color: cornsilk;
 }
-  .titulo{
-   
-    position:relative;    
-    width:100vw;
-    height:80vh; 
+
+.imgCarrusel{
+  width: 100%;
 }
+#menu{
+  display:flex;
+  justify-content:center;
+  background-color: black;
+  color:white;
+ padding: 0.3rem;
+}
+
+.botones{
+  border-style: groove;
+  border-color:blanchedalmond;
+  border-width: 0.3rem;
+  width: fit-content;
+  padding:0.3rem;
+  margin:1rem;
+  font-size: medium;
+}
+
+
+.botones:hover{
+  background-color: blanchedalmond;
+  color:black;
+}
+
+.none{
+  display:none;
+}
+
+
+
+.imagen{
+  flex-grow: 1;
+  position:relative;
+}
+
+.contenedor{
+  height:100%;
+  width:100%;
+  position:absolute;
+  bottom:0px;
+  right: 0px;
+ display: none; 
+  justify-content: center;
+  align-items: center;
+}
+.carrusel, #imgc1{
+  height:30rem;
+  width: 40rem;
+}
+
+.contenedor2{
+  height: 30rem;
+  width: 40rem;
+  position:relative;
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  
+}
+
+.lateral{
+  display:flex;
+  
+  position:absolute;
+  height: 30rem;
+  width: 3rem;
+ 
+  bottom:0px;
+  visibility: hidden;
+}
+.l1{
+  left:0px;
+ 
+}
+.l2{
+  right:0px;
+}
+.div2{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  
+  margin-top: 1rem;
+ 
+}
+.contenido{
+position:relative;
+}
+.carruselTitulo{
+  display:flex;
+  align-items: end;
+  justify-content: center;
+  position:absolute;
+  bottom:0px;
+  height: 30rem;
+  width: 100%;
+}
+.carruselTitulo a{
+  background-color: rgba(7, 54, 73, 0.581);
+  width: 100%;
+  padding: 0.5rem;
+  color:white;
+}
+
+@media (max-width:800px) {
+  .imagen{
+    flex-grow:0;
+  }
+  .contenedor{
+    width: 100%;
+    position: relative;
+  }
+  #contenedor0{
+    height: auto;
+  }
+  .contenedor2,.contenido,.divTitulo,.carrusel{
+    width:100%;
+  }
+}
+
+/*
+
+
 
 
 .contenedor{
@@ -21,7 +143,7 @@ html,body{
     position:absolute;
     bottom:0px;
     right: 0px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
@@ -43,67 +165,12 @@ html,body{
 
 
 
- .carrusel, #imgc1{
-    height:30rem;
-    width: 40rem;
-}
-
-  .contenedor2{
-    height: 30rem;
-    width: 40rem;
-    position:relative;
-    display:flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
-    
-  }
+ 
 
   #svgHome{
    
     width: 100%;
   }
 
-  .lateral{
-    display:flex;
-    
-    position:absolute;
-    height: 30rem;
-    width: 3rem;
-   
-    bottom:0px;
-    visibility: hidden;
-  }
-  .l1{
-    left:0px;
-   
-  }
-  .l2{
-    right:0px;
-  }
-  .div2{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    
-    margin-top: 1rem;
-   
-  }
-.contenido{
-  position:relative;
-}
-  .carruselTitulo{
-    display:flex;
-    align-items: end;
-    justify-content: center;
-    position:absolute;
-    bottom:0px;
-    height: 30rem;
-    width: 100%;
-  }
-  .carruselTitulo a{
-    background-color: rgba(7, 54, 73, 0.581);
-    width: 100%;
-    padding: 0.5rem;
-    color:white;
-  }
+  
+*/
