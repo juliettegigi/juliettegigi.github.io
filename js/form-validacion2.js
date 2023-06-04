@@ -9,7 +9,7 @@ function validarDire(e){
     const boton=document.getElementById("boton2");
     const pe=document.getElementById(e.target.name);
     
-    if(e.target.value===""){
+    if(!/^[\w,.]+( [.,\w]+)*$/.test(e.target.value)){
         pe.style.visibility="visible";
         boton.disabled=true; 
         //boton.style.color="red";

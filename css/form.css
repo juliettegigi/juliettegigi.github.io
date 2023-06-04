@@ -1,3 +1,7 @@
+
+#btn1,#btn2{
+    width: min-content;
+}
 #envio{
     display: none;
 }
@@ -126,7 +130,7 @@ flex-direction: column;
 
     #c1{
         flex-direction: column;
-        width:75vh;
+        width:100vw;
        
     }
    #libromuestra{

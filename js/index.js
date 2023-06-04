@@ -12,15 +12,8 @@ const carruselIndex={
     i:0,
     arreglo:[]
 }
-/*<div>
-     <img src="./imgs/blog.png" alt="blog" >
-  </div>
-  <div class="carruselTitulo">
-    <a href="./bocaditos.html">
-        <h1 >Accede a nuestro blog</h1>
-        </a>
-  </div>`,
- */
+
+
 function initArregloCarruselIndex(){
     for(let i=0;i<elementosCarruselIndex.img.length;i++){
         const div0=document.createElement("div");
@@ -57,17 +50,11 @@ const carruselForm={
 initArreglo();
 
 function initArreglo(){
-   /*5 imágenes: tabla de algunos valores nutritivos en gramos
-   efectos y orígenes de algunas vitaminas 
-   indice alfabético de términos de cocina
-   presentación de la buena mesa
-   la cristalería
-   */
+  
     const arrSrcImg=["./imgs/img001.jpg","./imgs/img003.jpg","./imgs/img004.jpg","./imgs/img005.jpg","./imgs/img006.jpg"];
     for(let i=0; i<arrSrcImg.length;i++){
         const elem1=document.createElement("div");
         const elem2=document.createElement("img");
-       // elem2.style.width="90%";
         elem2.src=arrSrcImg[i];
         elem1.appendChild(elem2);
         carruselForm.arreglo.push(elem1);
